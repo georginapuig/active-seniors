@@ -6,8 +6,6 @@
 <br>
 **Project Manager**: @turiburu
 <br>
-**Product Owner**: @turiburu
-<br>
 **Lead designer**: @palominocp
 <br>
 
