@@ -20,9 +20,9 @@ Run rails db:migrate
 ```
 ---
 
-**Trello:** bit.ly/3fKB62E
+**Trello:**  https://bit.ly/3fKB62E
 <br>
-**User stories/routes:** bit.ly/3fLhlIj
+**User stories/routes:** https://bit.ly/3fLhlIj
 <br>
 **Heroku:** https://active-seniors.herokuapp.com/
 <br>
@@ -30,7 +30,7 @@ Run rails db:migrate
 <br>
 **Github repo:** https://github.com/georginapuig/active-seniors
 <br>
-**Figma:** bit.ly/2NiZSKX
+**Figma:**  https://bit.ly/2NiZSKX
 
 ---
 
