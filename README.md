@@ -20,7 +20,7 @@ Run rails db:migrate
 ```
 ---
 
-set the channel topic: **Trello:** bit.ly/3fKB62E
+**Trello:** bit.ly/3fKB62E
 <br>
 **User stories/routes:** bit.ly/3fLhlIj
 <br>
