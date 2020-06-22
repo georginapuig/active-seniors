@@ -20,13 +20,17 @@ Run rails db:migrate
 ```
 ---
 
-Trello:  https://trello.com/b/ntFm6GCr/active-seniors
+set the channel topic: **Trello:** bit.ly/3fKB62E
 <br>
-User stories/routes:  https://docs.google.com/spreadsheets/d/1qymOwz_hfIwdWZ7V_c1AyyGVb6ktr2PPvLIFAFiS8zo/edit?usp=sharing
+**User stories/routes:** bit.ly/3fLhlIj
 <br>
-DB Schema:  https://kitt.lewagon.com/db/9957
+**Heroku:** https://active-seniors.herokuapp.com/
 <br>
-Figma:  https://www.figma.com/file/2lkCs4AUcG00jhriQjQOj1/Untitled 
+**DB Schema:** https://kitt.lewagon.com/db/9957
+<br>
+**Github repo:** https://github.com/georginapuig/active-seniors
+<br>
+**Figma:** bit.ly/2NiZSKX
 
 ---
 
