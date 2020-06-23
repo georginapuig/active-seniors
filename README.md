@@ -20,13 +20,13 @@ Run rails db:migrate
 ```
 ---
 
-Trello: bit.ly/3fKB62E
+Trello: https://bit.ly/3fKB62E
 <br>
-User stories/routes: bit.ly/3fLhlIj
+User stories/routes: https://bit.ly/3fLhlIj
 <br>
-DB Schema: bit.ly/3fOta0g
+DB Schema: https://bit.ly/3fOta0g
 <br>
-Figma: bit.ly/2NiZSKX
+Figma: https://bit.ly/2NiZSKX
 
 ---
 
