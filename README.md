@@ -20,17 +20,13 @@ Run rails db:migrate
 ```
 ---
 
-**Trello:**  https://bit.ly/3fKB62E
+Trello: bit.ly/3fKB62E
 <br>
-**User stories/routes:** https://bit.ly/3fLhlIj
+User stories/routes: bit.ly/3fLhlIj
 <br>
-**Heroku:** https://active-seniors.herokuapp.com/
+DB Schema: bit.ly/3fOta0g
 <br>
-**DB Schema:** https://kitt.lewagon.com/db/9957
-<br>
-**Github repo:** https://github.com/georginapuig/active-seniors
-<br>
-**Figma:**  https://bit.ly/2NiZSKX
+Figma: bit.ly/2NiZSKX
 
 ---
 
