@@ -1,2 +1,41 @@
-<h1>Offers#index</h1>
-<p>Find me in app/views/offers/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h2>Offers</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offers.each do |offer| %>
+      <tr>
+        <td><%= offer.user_id.first_name %></td>
+        <td><%= offer.user_id.last_name %></td>
+        <td><%= offer.category_id %></td>
+        <td><%= offer.subcategory_id %></td>
+        <td><%= offer.description %></td>
+        <td><%= offer.price %></td>
+        <% if policy(offer).show? %>
+          <%= link_to "Show offer", offer %>
+        <% end %>
+        <% if policy(offer).edit? %>
+          <%= link_to "Edit your offer", edit_offer_path(offer) %>
+        <% end %>
+        <% if policy(offer).delete? %>
+          <%= link_to "Delete offer", offer, method: :delete, data { confirm: 'Are you sure?'} %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if policy(Offer).create? %>
+  <%= link_to "Create a new offer", new_offer_path %>
+<% end %>
