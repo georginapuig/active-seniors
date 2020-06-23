@@ -2,6 +2,19 @@
   <h1>:sparkles: Active Seniors :sparkles:</h1>
 </div>
 
+<div align="center">
+  Target:
+  Active people after 60 willing to do some job they like with flexible work schedule
+  <br>
+  Pain:
+  Getting a job for people after 60 is challenging.
+  <br>
+  Solution:
+  Platform allowing senior population to display their skills and talents, solution connecting seniors with potential jobs
+</div>
+
+---
+
 **Lead Dev:** @georginapuig
 <br>
 **Project Manager**: @turiburu
