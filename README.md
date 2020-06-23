@@ -2,14 +2,14 @@
   <h1>:sparkles: Active Seniors :sparkles:</h1>
 </div>
 
-<div align="center">
-  Target:
+<div>
+  **Target:**
   Active people after 60 willing to do some job they like with flexible work schedule
   <br>
-  Pain:
+  **Pain:**
   Getting a job for people after 60 is challenging.
   <br>
-  Solution:
+  **Solution:**
   Platform allowing senior population to display their skills and talents, solution connecting seniors with potential jobs
 </div>
 
