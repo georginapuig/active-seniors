@@ -1,3 +1,10 @@
+.h2-hdiw,
+.h3-senior,
+.top-seniors-h2 {
+  font-family: "Work Sans";
+  font-weight: 600;
+}
+
 // categories
 .category {
   width: 150px;
@@ -6,7 +13,6 @@
   padding-top: 60px;
   background-color: #D3D3D3;
   color: #888888;
-  font-weight: 600;
   font-size: 18px;
   border-radius: 50%;
   text-align: center;
@@ -24,14 +30,11 @@
 .h2-hdiw {
   font-size: 32px;
   font-weight: 600;
-  font-family: "Work Sans";
   padding-bottom: 50px;
 }
 
 .h3-senior {
-  font-family: "Work Sans";
   font-size: 18px;
-  font-weight: bold;
   color: #969696;
   text-align: center;
 }
