@@ -1,0 +1,39 @@
+.card_advertisement {
+  overflow: hidden;
+  width: 320px;
+  height: 120px;
+  margin-bottom: 30px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card_advertisement img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  background-color: #C4C4C4;
+}
+
+.card_advertisement h2 {
+  font-family: "Work Sans";
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+}
+
+.card_advertisement p {
+  font-size: 18px;
+  color: #818080;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  opacity: .9;
+  margin-bottom: 0;
+}
+
+.card_advertisement .card_advertisement-infos {
+  padding: 16px;
+}
+
