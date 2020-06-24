@@ -39,7 +39,7 @@ User stories/routes: https://bit.ly/3fLhlIj
 <br>
 DB Schema: https://bit.ly/3fOta0g
 <br>
-Figma: https://bit.ly/2NiZSKX
+Figma: https://bit.ly/2VeOK6g
 
 ---
 
