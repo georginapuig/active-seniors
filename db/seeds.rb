@@ -12,8 +12,22 @@ Offer.destroy_all
 Category.destroy_all
 User.destroy_all
 
-user_1 = User.create!(first_name: 'Andrea', last_name: 'Bazan', email: 'andrea@me.com', password: '123456')
-user_2 = User.create!(first_name: 'Benja', last_name: 'Hernandez', email: 'benja@me.com', password: '123456')
+user_1 = User.create!(first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: '123456')
+user_2 = User.create!(first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: '123456')
+
+users = [user_1, user_2]
+
+def define_gender(user)
+  users.find_index(user) == 0 ? "M" : "F"
+end
+
+def select_picture(gender)
+  if gender == "M"
+    men_pics
+  else
+    female_pics
+  end
+end
 
 category_1 = Category.create!(name: "Home")
 category_2 = Category.create!(name: "Languages")
@@ -23,6 +37,37 @@ category_5 = Category.create!(name: "Photo & Video")
 category_6 = Category.create!(name: "Crafts")
 
 prices = [20, 30, 50, 35, 40]
+
+age = rand(55..68)
+
+female_pics = [
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593006095/Seniors/w1.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003796/Seniors/w2.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003611/Seniors/w3.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003439/Seniors/w4.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003438/Seniors/w5.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996185/Seniors/w6.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996182/Seniors/w7.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996180/Seniors/w8.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996177/Seniors/w9.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996105/Seniors/w10.jpg',
+              'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996175/Seniors/w11.jpg'
+]
+
+men_pics = [
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593004136/Seniors/m1.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003795/Seniors/m2.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003438/Seniors/m3.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003434/Seniors/m4.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003433/Seniors/m5.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003432/Seniors/m6.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996182/Seniors/m7.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996182/Seniors/m8.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996181/Seniors/m9.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996181/Seniors/m10.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996171/Seniors/m12.jpg',
+           'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996177/Seniors/m13.jpg'
+]
 
 description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
@@ -51,69 +96,95 @@ end
    Category.create!(name: subcategory, parent_id: category_6.id)
 end
 
+
+
 20.times do
+    user = users.sample,
+    gender = define_gender(user),
     offer = Offer.create!(
      category_id: category_1.id,
      subcategory_id: category_1.subcategories.sample.id,
-     user_id: user_1.id,
+     user_id: users.sample.id,
      description: description,
      location: Faker::Address.city,
-     price: prices.sample
+     price: prices.sample,
+     photo: select_picture,
+     age: age
      )
 end
 
 20.times do
+    user = users.sample,
+    gender = define_gender(user),
     offer = Offer.create!(
      category_id: category_2.id,
      subcategory_id: category_2.subcategories.sample.id,
-     user_id: user_1.id,
+     user_id: user.id,
      description: description,
      location: Faker::Address.city,
-     price: prices.sample
+     price: prices.sample,
+     photo: select_picture,
+     age: age
      )
 end
 
 20.times do
+    user = users.sample,
+    gender = define_gender(user),
     offer = Offer.create!(
      category_id: category_3.id,
      subcategory_id: category_3.subcategories.sample.id,
      user_id: user_1.id,
      description: description,
      location: Faker::Address.city,
-     price: prices.sample
+     price: prices.sample,
+     photo: select_picture,
+     age: age
      )
 end
 
 20.times do
+    user = users.sample,
+    gender = define_gender(user),
     offer = Offer.create!(
      category_id: category_4.id,
      subcategory_id: category_4.subcategories.sample.id,
      user_id: user_1.id,
      description: description,
      location: Faker::Address.city,
-     price: prices.sample
+     price: prices.sample,
+     photo: select_picture,
+     age: age
      )
 end
 
 20.times do
+    user = users.sample,
+    gender = define_gender(user),
     offer = Offer.create!(
      category_id: category_5.id,
      subcategory_id: category_5.subcategories.sample.id,
      user_id: user_1.id,
      description: description,
      location: Faker::Address.city,
-     price: prices.sample
+     price: prices.sample,
+     photo: select_picture,
+     age: age
      )
 end
 
 20.times do
+    user = users.sample,
+    gender = define_gender(user),
     offer = Offer.create!(
      category_id: category_6.id,
      subcategory_id: category_6.subcategories.sample.id,
      user_id: user_1.id,
-     # description:
+     description: description,
      location: Faker::Address.city,
-     price: prices.sample
+     price: prices.sample,
+     photo: select_picture,
+     age: age
      )
 end
 
