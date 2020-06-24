@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 414be639daa9d3bb61c084bed8b8e0776b6020d3
+  branch: master
+  specs:
+    faker (2.12.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -261,6 +269,7 @@ DEPENDENCIES
   cloudinary (~> 1.12.0)
   devise
   dotenv-rails
+  faker!
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
