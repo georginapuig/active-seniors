@@ -1,1 +1,21 @@
-// Specific CSS for your home-page
+// categories
+.category {
+  width: 150px;
+  height: 150px;
+  margin: 100px 20px 100px auto;
+  padding-top: 60px;
+  background-color: #D3D3D3;
+  color: #888888;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 50%;
+  text-align: center;
+  transition: .3s;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  background-color: #e0e0e0;
+  color: #888888;
+  text-decoration: none;
+}
