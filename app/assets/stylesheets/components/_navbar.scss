@@ -10,3 +10,13 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-logo {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+.nav-logo:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
