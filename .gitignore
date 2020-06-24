@@ -40,3 +40,4 @@ yarn-debug.log*
 *.swp
 .DS_Store
 .env*
+.env*
