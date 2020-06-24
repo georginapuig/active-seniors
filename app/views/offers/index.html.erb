@@ -5,30 +5,33 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>Photo</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Category</th>
+      <th>Subcategory</th>
+      <th>Description</th>
+      <th>Price</th>
     </tr>
   </thead>
 
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.user_id.first_name %></td>
-        <td><%= offer.user_id.last_name %></td>
-        <td><%= offer.category_id %></td>
-        <td><%= offer.subcategory_id %></td>
+        <td><img src=<%= offer.user.photo %> height='200' ></td>
+        <td><%= offer.user.first_name %></td>
+        <td><%= offer.user.last_name %></td>
+        <td><%= offer.user.gender %></td>
+        <td><%= offer.user.age %></td>
+        <td><%= offer.category.name %></td>
+        <td><%= offer.subcategory.name %></td>
         <td><%= offer.description %></td>
         <td><%= offer.price %></td>
-        <% if policy(offer).show? %>
-          <%= link_to "Show offer", offer %>
-        <% end %>
-        <% if policy(offer).edit? %>
-          <%= link_to "Edit your offer", edit_offer_path(offer) %>
-        <% end %>
-        <% if policy(offer).delete? %>
-          <%= link_to "Delete offer", offer, method: :delete, data { confirm: 'Are you sure?'} %>
-        <% end %>
+        <td><%= link_to "Show", offer %></td>
+        <td><%= link_to "Edit", edit_offer_path(offer) %></td>
+        <td><%= link_to "Delete", offer, method: :delete, data: { confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,6 +39,5 @@
 
 <br>
 
-<% if policy(Offer).create? %>
-  <%= link_to "Create a new offer", new_offer_path %>
-<% end %>
+<%= link_to "Create a new offer", new_offer_path %>
+

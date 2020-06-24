@@ -2,8 +2,8 @@
   <h2 class="text-center pb-3">Information about your offer</h2>
 
   <%= simple_form_for @offer do |f| %>
-    <%= f.input :category, collection: Category.all.map { |category| category.name } %>
-    <%= f.input :subcategory, as: :select %>
+    <%= f.input :category, collection: Category.categories %>
+    <%= f.input :subcategory, as: :select, collection: Category.subcategories %>
     <%= f.input :location %>
     <%= f.input :description %>
     <%= f.input :photo, as: :file %>
