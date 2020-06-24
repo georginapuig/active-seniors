@@ -45,3 +45,17 @@
   padding-bottom: 40px;
   text-align: center;
 }
+
+.cards {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-advertisement {
+  transition: .3s;
+}
+
+.card-advertisement:hover {
+  transform: scale(1.03);
+  opacity: .9;
+}
