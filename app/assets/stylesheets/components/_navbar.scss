@@ -11,12 +11,41 @@
   width: 40px;
 }
 
+// logo
 .nav-logo {
-  color: rgba(0, 0, 0, 0.5);
-  font-family: 'Roboto';
+  color: #858585;
   font-weight: 600;
+  font-size: 18px;
 }
 
 .nav-logo:hover {
   color: rgba(0, 0, 0, 0.7);
+}
+
+// buttons
+.btn-signup,
+.btn-login {
+  margin-left: 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+  width: 115px;
+  height: 39px;
+  transition: .3s;
+}
+
+.btn-signup {
+  background-color: #8A8A8A;
+}
+
+.btn-signup:hover {
+  background-color: #9e9e9e;
+}
+
+.btn-login {
+  background-color: #D0CFCF;
+}
+
+.btn-login:hover {
+  background-color: #dfdfdf;
 }
