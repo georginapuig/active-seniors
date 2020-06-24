@@ -1,7 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+  <%= link_to "Active Seniors", root_path, class: "nav-link nav-logo" %>
+  <!-- <%= link_to "I am a senior", "#", class: "nav-link btn-senior" %> -->
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,7 +8,7 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto pl-3 pr-3">
       <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
@@ -27,7 +26,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Sign Up", new_user_session_path, class: "nav-link btn-signup text-white" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link btn-login text-white" %>
         </li>
       <% end %>
     </ul>
