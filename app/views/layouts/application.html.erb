@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ActiveSeniors</title> 
+    <title>ActiveSeniors</title>
     <meta charset="UTF-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,5 +17,7 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
+    <%= yield(:js_before_body) %>
   </body>
 </html>
