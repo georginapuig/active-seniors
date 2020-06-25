@@ -1,5 +1,5 @@
 .h2-hdiw,
-.h3-senior,
+.a-senior,
 .top-seniors-h2 {
   font-family: "Work Sans";
   font-weight: 600;
@@ -75,10 +75,16 @@
   padding-bottom: 50px;
 }
 
-.h3-senior {
+.a-senior {
   font-size: 18px;
   color: #969696;
   text-align: center;
+  transition: .3s;
+}
+
+.a-senior:hover {
+  color: #E7A142;
+  text-decoration: none;
 }
 
 // top active seniors
@@ -97,9 +103,156 @@
   transition: .3s;
 }
 
+a:nth-child(2) .card-advertisement,
+a:nth-child(5) .card-advertisement {
+  margin: auto 50px;
+}
+
 .card-advertisement:hover {
   transform: scale(1.03);
   opacity: .9;
 }
 
+a:hover {
+  text-decoration: none;
+}
 
+// <!-- card -->
+// <div class="card-advertisement d-flex flex-column mr-5 mb-5">
+// <!-- top card -->
+// <div class="d-flex top-card">
+//   <!-- top left -->
+//   <img src="" />
+//   <!-- top right -->
+//   <div class="top-text-card">
+//     <h2>Advertisement title</h2>
+//     <p>Category - Sub category</p>
+//     <sub>Location</sub>
+//   </div>
+// </div>
+// <!-- bottom card -->
+// <div class="d-flex bottom-card">
+//   <!-- bottom left -->
+//   <div class="card-bottom-left">
+//     <p>Name</p>
+//     <p>Member since Jun 2020</p>
+//     <p>:star: 4.91 (15)</p>
+//   </div>
+//   <!-- bottom right -->
+//   <div class="card-bottom-right">
+//     <p>$$/hr</p>
+//   </div>
+// </div>
+// </div>
+
+// <!-- card -->
+// <div class="card-advertisement d-flex flex-column mb-5">
+//   <!-- top card -->
+//   <div class="d-flex top-card">
+//     <!-- top left -->
+//     <img src="" />
+//     <!-- top right -->
+//     <div class="top-text-card">
+//       <h2>Advertisement title</h2>
+//       <p>Category - Sub category</p>
+//       <sub>Location</sub>
+//     </div>
+//   </div>
+//   <!-- bottom card -->
+//   <div class="d-flex bottom-card">
+//     <!-- bottom left -->
+//     <div class="card-bottom-left">
+//       <p>Name</p>
+//       <p>Member since Jun 2020</p>
+//       <p>:star: 4.91 (15)</p>
+//     </div>
+//     <!-- bottom right -->
+//     <div class="card-bottom-right">
+//       <p>$$/hr</p>
+//     </div>
+//   </div>
+// </div>
+
+// <!-- card -->
+// <div class="card-advertisement d-flex flex-column mr-5">
+//   <!-- top card -->
+//   <div class="d-flex top-card">
+//     <!-- top left -->
+//     <img src="" />
+//     <!-- top right -->
+//     <div class="top-text-card">
+//       <h2>Advertisement title</h2>
+//       <p>Category - Sub category</p>
+//       <sub>Location</sub>
+//     </div>
+//   </div>
+//   <!-- bottom card -->
+//   <div class="d-flex bottom-card">
+//     <!-- bottom left -->
+//     <div class="card-bottom-left">
+//       <p>Name</p>
+//       <p>Member since Jun 2020</p>
+//       <p>:star: 4.91 (15)</p>
+//     </div>
+//     <!-- bottom right -->
+//     <div class="card-bottom-right">
+//       <p>$$/hr</p>
+//     </div>
+//   </div>
+// </div>
+
+// <!-- card -->
+// <div class="card-advertisement d-flex flex-column mr-5">
+// <!-- top card -->
+// <div class="d-flex top-card">
+//   <!-- top left -->
+//   <img src="" />
+//   <!-- top right -->
+//   <div class="top-text-card">
+//     <h2>Advertisement title</h2>
+//     <p>Category - Sub category</p>
+//     <sub>Location</sub>
+//   </div>
+// </div>
+// <!-- bottom card -->
+// <div class="d-flex bottom-card">
+//   <!-- bottom left -->
+//   <div class="card-bottom-left">
+//     <p>Name</p>
+//     <p>Member since Jun 2020</p>
+//     <p>:star: 4.91 (15)</p>
+//   </div>
+//   <!-- bottom right -->
+//   <div class="card-bottom-right">
+//     <p>$$/hr</p>
+//   </div>
+// </div>
+// </div>
+
+// <!-- card -->
+// <div class="card-advertisement d-flex flex-column">
+//   <!-- top card -->
+//   <div class="d-flex top-card">
+//     <!-- top left -->
+//     <img src="" />
+//     <!-- top right -->
+//     <div class="top-text-card">
+//       <h2>Advertisement title</h2>
+//       <p>Category - Sub category</p>
+//       <sub>Location</sub>
+//     </div>
+//   </div>
+//   <!-- bottom card -->
+//   <div class="d-flex bottom-card">
+//     <!-- bottom left -->
+//     <div class="card-bottom-left">
+//       <p>Name</p>
+//       <p>Member since Jun 2020</p>
+//       <p>:star: 4.91 (15)</p>
+//     </div>
+//     <!-- bottom right -->
+//     <div class="card-bottom-right">
+//       <p>$$/hr</p>
+//     </div>
+//   </div>
+// </div>
