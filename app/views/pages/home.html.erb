@@ -16,12 +16,12 @@
 
 <!-- categories -->
 <div class="container d-flex justify-content-center">
-  <a href="" class="category">Home & Kids</a>
-  <a href="" class="category">Languages</a>
-  <a href="" class="category">School</a>
-  <a href="" class="category">Music</a>
-  <a href="" class="category">Photo & Video</a>
-  <a href="" class="category">Arts & Crafts</a>
+  <%= link_to "Home & Kids", offers_path(q: "Home & Kids"), class: "category" %>
+  <%= link_to "Languages", offers_path(q: "Languages"), class: "category" %>
+  <%= link_to "School", offers_path(q: "School"), class: "category" %>
+  <%= link_to "Music", offers_path(q: "Music"), class: "category" %>
+  <%= link_to "Photo & Video", offers_path(q: "Photo & Video"), class: "category" %>
+  <%= link_to "Arts & Crafts", offers_path(q: "Arts & Crafts"), class: "category" %>
 </div>
 
 <!-- how does it work -->

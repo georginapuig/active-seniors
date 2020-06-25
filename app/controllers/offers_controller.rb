@@ -2,7 +2,14 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @offers = Offer.all.shuffle
+    filter = params["q"]
+
+    if filter.nil?
+      @offers = Offer.all.shuffle
+    else
+      id = Category.where(name: "#{filter}").first.id
+      @offers = Offer.where(category_id: id)
+    end
   end
 
   def show
