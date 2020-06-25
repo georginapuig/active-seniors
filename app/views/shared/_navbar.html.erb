@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "Active Seniors", root_path, class: "nav-link nav-logo" %>
-  <!-- <%= link_to "I am a senior", "#", class: "nav-link btn-senior" %> -->
+  
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,6 +8,7 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to "I am a senior", "#", class: "btn-senior nav-link pr-0" %>
     <ul class="navbar-nav mr-auto pl-3 pr-3">
       <% if user_signed_in? %>
         <li class="nav-item active">
@@ -26,10 +27,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Sign Up", new_user_session_path, class: "nav-link btn-signup text-white" %>
+          <%= link_to "Sign Up", new_user_session_path, class: "nav-link btn-signup" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link btn-login text-white" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link btn-login" %>
         </li>
       <% end %>
     </ul>
