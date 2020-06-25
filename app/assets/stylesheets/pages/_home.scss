@@ -11,19 +11,61 @@
   height: 150px;
   margin: 100px 20px 100px auto;
   padding-top: 60px;
-  background-color: #D3D3D3;
-  color: #888888;
-  font-size: 18px;
   border-radius: 50%;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
   text-align: center;
+  background-color: #D3D3D3;
+  background-position: center;
+  background-size: cover;
   transition: .3s;
 }
 
 .category:hover {
   transform: scale(1.05);
   background-color: #e0e0e0;
-  color: #888888;
+  color: white;
   text-decoration: none;
+}
+
+.category:nth-child(1) {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+}
+
+.category:nth-child(2) {
+  background-size: 200%;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+    url("https://images.unsplash.com/photo-1529203915787-cc54fa70a428?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+}
+
+.category:nth-child(3) {
+  background-size: 170%;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+    url("https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+}
+
+.category:nth-child(4) {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+    url("https://images.unsplash.com/photo-1546058256-47154de4046c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80");
+}
+
+.category:nth-child(5) {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+    url("https://images.unsplash.com/photo-1520390138845-fd2d229dd553?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80");
+}
+
+.category:nth-child(6) {
+  background-size: 170%;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+    url("https://images.unsplash.com/photo-1557817017-2ce200058acd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1549&q=80");
 }
 
 // how does it work
@@ -59,3 +101,5 @@
   transform: scale(1.03);
   opacity: .9;
 }
+
+
