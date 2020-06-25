@@ -42,11 +42,27 @@ men_pics = [
 ]
 
 female_pics.each do |picture|
-user_2 = User.create!(first_name: Faker::Name.female_first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: '123456', photo: picture, age: rand(55..68), gender: "Female")
+  user_2 = User.create!(
+    first_name: Faker::Name.female_first_name, 
+    last_name: Faker::Name.last_name, 
+    email: Faker::Internet.email, 
+    password: '123456', 
+    photo: picture, 
+    age: rand(55..68), 
+    gender: "Female"
+  )
 end
 
 men_pics.each do |picture|
-user_1 = User.create!(first_name: Faker::Name.male_first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: '123456', photo: picture, age: rand(55..68), gender: "Male")
+  user_1 = User.create!(
+    first_name: Faker::Name.male_first_name, 
+    last_name: Faker::Name.last_name, 
+    email: Faker::Internet.email, 
+    password: '123456', 
+    photo: picture, 
+    age: rand(55..68), 
+    gender: "Male"
+  )
 end
 
 category_1 = Category.create!(name: "Home")
