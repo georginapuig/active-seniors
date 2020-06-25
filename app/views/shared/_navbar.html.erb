@@ -8,24 +8,28 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <%= link_to "I am a senior", "#", class: "btn-senior nav-link pr-0" %>
     <ul class="navbar-nav mr-auto pl-3 pr-3">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
+        </li> -->
+        <!-- <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
+        </li> -->
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </li>
       <% else %>
+        <li class="nav-item">
+          <%= link_to "I am a senior", "#", class: "btn-senior" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Sign Up", new_user_session_path, class: "nav-link btn-signup" %>
         </li>
