@@ -77,8 +77,8 @@
             <img src=<%= offer.user.photo %> />
             <!-- top right -->
             <div class="top-text-card">
-              <h2>Advertisement title</h2>
-              <p><%= offer.category.name %> - <%= offer.subcategory.name %></p>
+              <h2><%= offer.category.name %></h2>
+              <p><%= offer.subcategory.name %></p>
               <sub><%= offer.location %></sub>
             </div>
           </div>
@@ -86,7 +86,7 @@
           <div class="d-flex bottom-card">
             <!-- bottom left -->
             <div class="card-bottom-left">
-              <p><%= offer.user.first_name %></p>
+              <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
               <p>Member since Jun 2020</p>
               <p>:star: 4.91 (15)</p>
             </div>
