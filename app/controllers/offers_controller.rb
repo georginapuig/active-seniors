@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    @offers = Offer.order(created_at: :desc)
+    @offers = Offer.all.shuffle
   end
 
   def show

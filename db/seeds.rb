@@ -43,34 +43,34 @@ men_pics = [
 
 female_pics.each do |picture|
   user_2 = User.create!(
-    first_name: Faker::Name.female_first_name, 
-    last_name: Faker::Name.last_name, 
-    email: Faker::Internet.email, 
-    password: '123456', 
-    photo: picture, 
-    age: rand(55..68), 
+    first_name: Faker::Name.female_first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: '123456',
+    photo: picture,
+    age: rand(55..68),
     gender: "Female"
   )
 end
 
 men_pics.each do |picture|
   user_1 = User.create!(
-    first_name: Faker::Name.male_first_name, 
-    last_name: Faker::Name.last_name, 
-    email: Faker::Internet.email, 
-    password: '123456', 
-    photo: picture, 
-    age: rand(55..68), 
+    first_name: Faker::Name.male_first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: '123456',
+    photo: picture,
+    age: rand(55..68),
     gender: "Male"
   )
 end
 
-category_1 = Category.create!(name: "Home")
+category_1 = Category.create!(name: "Home & Kids")
 category_2 = Category.create!(name: "Languages")
 category_3 = Category.create!(name: "School")
 category_4 = Category.create!(name: "Music")
 category_5 = Category.create!(name: "Photo & Video")
-category_6 = Category.create!(name: "Crafts")
+category_6 = Category.create!(name: "Arts & Crafts")
 
 prices = [20, 30, 50, 35, 40]
 
@@ -96,70 +96,70 @@ end
  Category.create!(name: subcategory, parent_id: category_5.id)
 end
 
-['Sewing', 'Knitting', 'Woodworking', 'Jewellery', 'Pottery', 'Other'].each do |subcategory|
+['Painting', 'Sewing', 'Knitting', 'Woodworking', 'Jewellery', 'Pottery', 'Other'].each do |subcategory|
    Category.create!(name: subcategory, parent_id: category_6.id)
 end
 
-20.times do
+User.all.each do |user|
   offer = Offer.create!(
     category_id: category_1.id,
     subcategory_id: category_1.subcategories.sample.id,
-    user_id: User.all.sample.id,
+    user_id: user.id,
     description: description,
     location: Faker::Address.city,
     price: prices.sample,
   )
 end
 
-20.times do
+User.all.each do |user|
   offer = Offer.create!(
     category_id: category_2.id,
     subcategory_id: category_2.subcategories.sample.id,
-    user_id: User.all.sample.id,
+    user_id: user.id,
     description: description,
     location: Faker::Address.city,
     price: prices.sample,
   )
 end
 
-20.times do
+User.all.each do |user|
   offer = Offer.create!(
     category_id: category_3.id,
     subcategory_id: category_3.subcategories.sample.id,
-    user_id: User.all.sample.id,
+    user_id: user.id,
     description: description,
     location: Faker::Address.city,
     price: prices.sample,
   )
 end
 
-20.times do
+User.all.each do |user|
   offer = Offer.create!(
     category_id: category_4.id,
     subcategory_id: category_4.subcategories.sample.id,
-    user_id: User.all.sample.id,
+    user_id: user.id,
     description: description,
     location: Faker::Address.city,
     price: prices.sample,
   )
 end
 
-20.times do
+User.all.each do |user|
   offer = Offer.create!(
     category_id: category_5.id,
     subcategory_id: category_5.subcategories.sample.id,
-    user_id: User.all.sample.id,
+    user_id: user.id,
     description: description,
     location: Faker::Address.city,
     price: prices.sample,
   )
 end
 
-20.times do
+User.all.each do |user|
   offer = Offer.create!(
     category_id: category_6.id,
     subcategory_id: category_6.subcategories.sample.id,
-    user_id: User.all.sample.id,
+    user_id: user.id,
     description: description,
     location: Faker::Address.city,
     price: prices.sample,
