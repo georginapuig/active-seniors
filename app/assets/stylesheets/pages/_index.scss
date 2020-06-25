@@ -1,2 +1,24 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#container-index {
+  max-width: 1090px;
+}
+
+#cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+#card-advertisement-index {
+  margin: 0 0 25px 0;
+}
+
+.h2-index {
+  font-family: "Work Sans";
+  font-size: 32px;
+  font-weight: 600;
+  margin: 30px auto;
+}
