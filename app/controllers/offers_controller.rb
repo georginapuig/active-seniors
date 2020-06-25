@@ -5,10 +5,22 @@ class OffersController < ApplicationController
     filter = params["q"]
 
     if filter.nil?
-      @offers = Offer.all.shuffle
+      @offers = Offer.geocoded.shuffle
+
+      @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude
+      }
     else
       id = Category.where(name: "#{filter}").first.id
-      @offers = Offer.where(category_id: id)
+      @offers = Offer.where(category_id: id).geocoded.shuffle
+      
+      @markers = @offers.map do |offer|
+        {
+          lat: offer.latitude,
+          lng: offer.longitude
+        }
     end
   end
 
