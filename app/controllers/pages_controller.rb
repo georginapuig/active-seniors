@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     # @offers = Offer.all
-    @offers = Offer.limit(6)
+    @offers = Offer.all.shuffle.first(6)
   end
 end
