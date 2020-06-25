@@ -1,33 +1,60 @@
-<h1>Offers#show</h1>
-<p>Find me in app/views/offers/show.html.erb</p>
 
 
 
-
-
-
-
-<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+  Read Reviews
 </button>
 
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Reviews</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="modal-dialog modal-dialog-scrollable">
+          Lorem ipsum dolor sit amet, sit eius alienum concludaturque cu, tempor dolorum no duo. Torquatos consequuntur his ea. Te prima mnesarchum pri, eu rationibus instructior mei. Tation perfecto sententiae in mei.
+          <br>
+          Et magna elaboraret his. Dicat quaestio contentiones nec ut, te nam modo noster conclusionemque, electram constituto vis ex. Laudem senserit his ex. Lucilius perfecto usu ne, pro habeo aliquam sententiae ex.
+          <br>
+          Modo blandit sea ad, ex volutpat similique cum. Nobis saperet quo ne. Natum perpetua consectetuer ut eum, usu et facer omnesque. Sea id porro qualisque, est ex eros tamquam, prima oblique vel at.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" data-whatever="Active Senior">Send a Message</button>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Send message</button>
       </div>
     </div>
   </div>

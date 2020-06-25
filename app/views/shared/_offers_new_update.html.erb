@@ -3,9 +3,9 @@
 
   <%= simple_form_for @offer do |f| %>
     <%= f.input :category, collection: Category.categories %>
-    <%= f.input :subcategory, as: :select, collection: Category.subcategories %>
+    <%= f.input :subcategory, collection: Category.subcategories %>
     <%= f.input :location %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :text %>
     <%= f.input :photo, as: :file %>
     <%= f.input :price, label: "Price (USD/ hour)*" %>
     <div class="form-actions">
