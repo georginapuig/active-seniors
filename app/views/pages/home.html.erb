@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <h3 class="h3-senior">I am a Senior</h3>
+  <a href="" class="a-senior">I am a Senior</a>
 
 </div>
 
@@ -67,172 +67,36 @@
 
   <!-- top cards -->
   <div class="cards d-flex justify-content-center mb-5">
-    <!-- card -->
-    <div class="card-advertisement d-flex flex-column mr-5 mb-5">
-      <!-- top card -->
-      <div class="d-flex top-card">
-        <!-- top left -->
-        <img src="" />
-        <!-- top right -->
-        <div class="top-text-card">
-          <h2>Advertisement title</h2>
-          <p>Category - Sub category</p>
-          <sub>Location</sub>
+    <% @offers.each do |offer| %>
+      <%= link_to offer_path(offer) do %>
+        <!-- card -->
+        <div class="card-advertisement d-flex flex-column mb-5">
+          <!-- top card -->
+          <div class="d-flex top-card">
+            <!-- top left -->
+            <img src=<%= offer.user.photo %> />
+            <!-- top right -->
+            <div class="top-text-card">
+              <h2>Advertisement title</h2>
+              <p><%= offer.category.name %> - <%= offer.subcategory.name %></p>
+              <sub><%= offer.location %></sub>
+            </div>
+          </div>
+          <!-- bottom card -->
+          <div class="d-flex bottom-card">
+            <!-- bottom left -->
+            <div class="card-bottom-left">
+              <p><%= offer.user.first_name %></p>
+              <p>Member since Jun 2020</p>
+              <p>:star: 4.91 (15)</p>
+            </div>
+            <!-- bottom right -->
+            <div class="card-bottom-right">
+              <p>$<%= offer.price %>/h</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- bottom card -->
-      <div class="d-flex bottom-card">
-        <!-- bottom left -->
-        <div class="card-bottom-left">
-          <p>Name</p>
-          <p>Member since Jun 2020</p>
-          <p>:star: 4.91 (15)</p>
-        </div>
-        <!-- bottom right -->
-        <div class="card-bottom-right">
-          <p>$$/hr</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- card -->
-    <div class="card-advertisement d-flex flex-column mr-5 mb-5">
-    <!-- top card -->
-    <div class="d-flex top-card">
-      <!-- top left -->
-      <img src="" />
-      <!-- top right -->
-      <div class="top-text-card">
-        <h2>Advertisement title</h2>
-        <p>Category - Sub category</p>
-        <sub>Location</sub>
-      </div>
-    </div>
-    <!-- bottom card -->
-    <div class="d-flex bottom-card">
-      <!-- bottom left -->
-      <div class="card-bottom-left">
-        <p>Name</p>
-        <p>Member since Jun 2020</p>
-        <p>:star: 4.91 (15)</p>
-      </div>
-      <!-- bottom right -->
-      <div class="card-bottom-right">
-        <p>$$/hr</p>
-      </div>
-    </div>
-    </div>
-
-    <!-- card -->
-    <div class="card-advertisement d-flex flex-column mb-5">
-      <!-- top card -->
-      <div class="d-flex top-card">
-        <!-- top left -->
-        <img src="" />
-        <!-- top right -->
-        <div class="top-text-card">
-          <h2>Advertisement title</h2>
-          <p>Category - Sub category</p>
-          <sub>Location</sub>
-        </div>
-      </div>
-      <!-- bottom card -->
-      <div class="d-flex bottom-card">
-        <!-- bottom left -->
-        <div class="card-bottom-left">
-          <p>Name</p>
-          <p>Member since Jun 2020</p>
-          <p>:star: 4.91 (15)</p>
-        </div>
-        <!-- bottom right -->
-        <div class="card-bottom-right">
-          <p>$$/hr</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- card -->
-    <div class="card-advertisement d-flex flex-column mr-5">
-      <!-- top card -->
-      <div class="d-flex top-card">
-        <!-- top left -->
-        <img src="" />
-        <!-- top right -->
-        <div class="top-text-card">
-          <h2>Advertisement title</h2>
-          <p>Category - Sub category</p>
-          <sub>Location</sub>
-        </div>
-      </div>
-      <!-- bottom card -->
-      <div class="d-flex bottom-card">
-        <!-- bottom left -->
-        <div class="card-bottom-left">
-          <p>Name</p>
-          <p>Member since Jun 2020</p>
-          <p>:star: 4.91 (15)</p>
-        </div>
-        <!-- bottom right -->
-        <div class="card-bottom-right">
-          <p>$$/hr</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- card -->
-    <div class="card-advertisement d-flex flex-column mr-5">
-    <!-- top card -->
-    <div class="d-flex top-card">
-      <!-- top left -->
-      <img src="" />
-      <!-- top right -->
-      <div class="top-text-card">
-        <h2>Advertisement title</h2>
-        <p>Category - Sub category</p>
-        <sub>Location</sub>
-      </div>
-    </div>
-    <!-- bottom card -->
-    <div class="d-flex bottom-card">
-      <!-- bottom left -->
-      <div class="card-bottom-left">
-        <p>Name</p>
-        <p>Member since Jun 2020</p>
-        <p>:star: 4.91 (15)</p>
-      </div>
-      <!-- bottom right -->
-      <div class="card-bottom-right">
-        <p>$$/hr</p>
-      </div>
-    </div>
-    </div>
-
-    <!-- card -->
-    <div class="card-advertisement d-flex flex-column">
-      <!-- top card -->
-      <div class="d-flex top-card">
-        <!-- top left -->
-        <img src="" />
-        <!-- top right -->
-        <div class="top-text-card">
-          <h2>Advertisement title</h2>
-          <p>Category - Sub category</p>
-          <sub>Location</sub>
-        </div>
-      </div>
-      <!-- bottom card -->
-      <div class="d-flex bottom-card">
-        <!-- bottom left -->
-        <div class="card-bottom-left">
-          <p>Name</p>
-          <p>Member since Jun 2020</p>
-          <p>:star: 4.91 (15)</p>
-        </div>
-        <!-- bottom right -->
-        <div class="card-bottom-right">
-          <p>$$/hr</p>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
