@@ -64,11 +64,12 @@ ActiveRecord::Schema.define(version: 2020_06_24_200218) do
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
+    t.bigint "user_id", null: false
     t.bigint "chatroom_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -102,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_200218) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.string "first_name"
     t.string "last_name"
     t.string "photo"
@@ -117,6 +118,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_200218) do
   add_foreign_key "bookings", "users"
   add_foreign_key "chatrooms", "bookings"
   add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "offers", "categories"
   add_foreign_key "offers", "categories", column: "subcategory_id"
   add_foreign_key "offers", "users"
