@@ -15,8 +15,8 @@
 }
 
 .card-senior img {
-  width: 320px;
-  height: 320px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   background-position: center;
   border-radius: 2px;
@@ -38,21 +38,22 @@
 
 // left
 #full-name {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
   margin-top: 15px;
   padding: 0;
 }
 
 #member-since {
+  font-size: 13;
   margin-top: 3px;
   margin-bottom: 15px;
 }
 
 .about p:nth-child(1) {
   font-size: 20px;
-  font-weight: 500;
-  padding-top: 25px;
+  font-weight: 600;
+  padding-top: 30px;
 }
 
 .about p:nth-child(2) {
@@ -62,7 +63,7 @@
 // right
 #category-h2 {
   font-family: "Work Sans";
-  font-size: 28px;
+  font-size: 30px;
 }
 
 #subcategory-p {
@@ -72,6 +73,35 @@
   margin: 0;
 }
 
-#sub {
-  font-size: 18px;
+.availability, 
+.location,
+.price {
+  padding-top: 20px;
+  text-align: right;
 }
+
+.availability p:nth-of-type(1) {
+  padding-top: 60px;
+}
+
+.availability p:nth-of-type(1),
+.location p:nth-of-type(1),
+.price p:nth-of-type(1) {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.availability p:nth-of-type(2),
+.location sub,
+.price p:nth-of-type(2) {
+  font-size: 15px;
+}
+
+.location {
+  margin-top: 50px;
+}
+
+.price p:nth-of-type(2) {
+  font-weight: 500;
+}
+

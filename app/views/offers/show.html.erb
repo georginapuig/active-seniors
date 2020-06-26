@@ -28,7 +28,19 @@
         <h2 id="category-h2"><%= @offer.category.name %></h2>
         <p id="subcategory-p"><%= @offer.subcategory.name %></p>
       </div>
-    </div>
+      <div class="availability">
+        <p>Availability</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+      </div>
+      <div class="price">
+        <p>Price</p>
+        <p>$<%= @offer.price %>/h</p>
+      </div>
+      <div class="location">
+        <p>Location</p>
+        <sub><%= @offer.location %></sub>
+      </div>
+      <div id="show-map"></div>
     </div>
   </div>
 </div>
