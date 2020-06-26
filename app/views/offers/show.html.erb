@@ -42,14 +42,12 @@
       </div>
       <!-- map -->
       <div id="show-map"
-        style="height: auto;"
-        data-markers="<%= @markers.to_json %>"
+        data-markers="<%= [@marker].to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    
-      <!-- add mapbox to show page -->
+
       <%= content_for(:js_before_body) do %>
-        <%= javascript_pack_tag 'mapbox' %>
+        <%= javascript_pack_tag "mapbox" %>
       <% end %>
   </div>
     </div>
