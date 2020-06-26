@@ -9,17 +9,21 @@ class OffersController < ApplicationController
       @markers = @offers.map do |offer|
         {
           lat: offer.latitude,
-          lng: offer.longitude
+          lng: offer.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
+          image_url: helpers.asset_url('pin.png')
         }
       end
     else
-      # id = Category.where(name: "#{filter}").first.id
-      @offers = Offer.geocoded.shuffle
-      
+      id = Category.where(name: "#{filter}").first.id
+      @offers = Offer.where(category_id: id).geocoded.shuffle
+
       @markers = @offers.map do |offer|
         {
           lat: offer.latitude,
-          lng: offer.longitude
+          lng: offer.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
+          image_url: helpers.asset_url('pin.png')
         }
       end
     end

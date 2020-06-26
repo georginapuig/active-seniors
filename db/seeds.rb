@@ -76,19 +76,19 @@ prices = [20, 30, 50, 35, 40]
 
 description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
-['Looking after kids', 'Houseworks', 'Gardening', 'Looking after pets', 'Other'].each do |subcategory|
+['Looking after kids', 'Houseworks', 'Gardening', 'Looking after pets'].each do |subcategory|
   Category.create!(name: subcategory, parent_id: category_1.id)
 end
 
-['Spanish', 'French', 'English', 'Portugese', 'Russian', 'Chinese', 'Other'].each do |subcategory|
+['Spanish', 'French', 'English', 'Portugese', 'Russian', 'Chinese'].each do |subcategory|
   Category.create!(name: subcategory, parent_id: category_2.id)
 end
 
-['Maths', 'Physics', 'Geography', 'Chemistry', 'History', 'Other'].each do |subcategory|
+['Maths', 'Physics', 'Geography', 'Chemistry', 'History'].each do |subcategory|
   Category.create!(name: subcategory, parent_id: category_3.id)
 end
 
-['Piano', 'Guitar', 'Saxophone', 'Drums', 'Flute', 'Cello', "Clarinet", "Other"].each do |subcategory|
+['Piano', 'Guitar', 'Saxophone', 'Drums', 'Flute', 'Cello', "Clarinet"].each do |subcategory|
  Category.create!(name: subcategory, parent_id: category_4.id)
 end
 
@@ -96,7 +96,7 @@ end
  Category.create!(name: subcategory, parent_id: category_5.id)
 end
 
-['Painting', 'Sewing', 'Knitting', 'Woodworking', 'Jewellery', 'Pottery', 'Other'].each do |subcategory|
+['Painting', 'Sewing', 'Knitting', 'Woodworking', 'Jewellery', 'Pottery'].each do |subcategory|
    Category.create!(name: subcategory, parent_id: category_6.id)
 end
 
