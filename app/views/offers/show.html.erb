@@ -7,8 +7,8 @@
       <img src=<%= @offer.user.photo %> />
       <div class="card-bottom-left">
         <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
-        <p id="member-since">Member since 
-          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+        <p id="member-since">Member since
+          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
           <%= rand(2015..2020) %>
         </p>
         <p>
@@ -43,10 +43,10 @@
       <!-- map -->
       <div id="show-map"
         style="height: auto;"
-        data-markers="<%= @markers.to_json %>"
+        data-markers="<%= @marker.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    
+
       <!-- add mapbox to show page -->
       <%= content_for(:js_before_body) do %>
         <%= javascript_pack_tag 'mapbox' %>
