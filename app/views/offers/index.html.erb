@@ -38,12 +38,18 @@
         <% end %>
       <% end %>
     </div>
-    
+
     <!-- map -->
-    <div id="map">
-    </div>
+      <div id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+        <%= content_for(:js_before_body) do %>
+        <%= javascript_pack_tag "mapbox" %>
+        <% end %>
   </div>
 </div>
+
 
 
 
