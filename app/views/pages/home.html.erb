@@ -90,7 +90,10 @@
             <!-- bottom left -->
             <div class="card-bottom-left">
               <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
-              <p>Member since Jun 2020</p>
+              <p>Member since 
+                <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+                <%= rand(2015..2020) %>
+              </p>
               <!-- <p>&#11088; 4.91 (15)</p> -->
               <p>
                 <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
