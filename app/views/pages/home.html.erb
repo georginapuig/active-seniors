@@ -2,7 +2,7 @@
 <div class="banner" style="background-image:
   linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),
   url(<%= cl_image_path('Seniors/banner_1') %>)">
-
+  <!-- filter form -->
   <div class="container text-left">
     <h1 class="header-h1 ">Find an experienced senior on the skill you need</h1>
     <form class="form-header text-left">
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<!-- categories -->
+<!-- categories section -->
 <div class="container d-flex justify-content-center">
   <%= link_to "Home & Kids", offers_path(q: "Home & Kids"), class: "category" %>
   <%= link_to "Languages", offers_path(q: "Languages"), class: "category" %>
@@ -24,7 +24,7 @@
   <%= link_to "Arts & Crafts", offers_path(q: "Arts & Crafts"), class: "category" %>
 </div>
 
-<!-- how does it work -->
+<!-- how does it work section -->
 <div class="container text-center">
   <h2 class="h2-hdiw">How does it work?</h2>
   <!-- cards produc -->
@@ -91,7 +91,8 @@
             <div class="card-bottom-left">
               <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
               <p>Member since Jun 2020</p>
-              <p>&#11088; 4.91 (15)</p>
+              <!-- <p>&#11088; 4.91 (15)</p> -->
+              <p><i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i> 4.91 (15)</p>
             </div>
             <!-- bottom right -->
             <div class="card-bottom-right">
