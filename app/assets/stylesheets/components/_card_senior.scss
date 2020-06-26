@@ -1,0 +1,33 @@
+.card-senior {
+  width: 1070px;
+  height: 690px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-senior img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  background-position: center;
+  border-radius: 2px;
+}
+
+.card-senior h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-senior p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+// .card-senior .card-senior-infos {
+//   padding: 16px;
+// }
