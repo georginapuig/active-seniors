@@ -4,7 +4,7 @@
   <h2 class="h2-index">Choose among <%= Offer.all.count %> experienced seniors in your area.</h2>
   <div class="d-flex">
     <!-- cards -->
-    <div id="cards" class="">
+    <div id="cards">
       <% @offers.each do |offer| %>
         <%= link_to offer_path(offer) do %>
           <!-- card -->
@@ -33,7 +33,8 @@
                 <p>
                   <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
                   <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
-                </p>              </div>
+                </p>              
+              </div>
               <!-- bottom right -->
               <div class="card-bottom-right">
                 <p>$<%= offer.price %>/h</p>
