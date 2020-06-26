@@ -10,9 +10,13 @@
 }
 
 .card-product i {
+  position: relative;
   height: 100%;
   width: 120px;
-  color: #E7A142
+  font-size: 35px;
+  color: #E7A142;
+  background-color: #F4F4F4;
+  padding-top: 40px;
 }
 
 .card-product h2 {
@@ -24,7 +28,7 @@
 }
 
 .card-product p {
-  font-size: 18px;
+  font-size: 17px;
   color: #818080;
   line-height: 1.4;
   letter-spacing: -0.015em;
@@ -33,6 +37,7 @@
 }
 
 .card-product .card-product-infos {
+  height: 100%;
   padding: 16px;
 }
 
