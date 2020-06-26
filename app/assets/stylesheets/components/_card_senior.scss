@@ -1,6 +1,6 @@
 .card-senior {
   width: 1070px;
-  height: 690px;
+  height: auto;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -28,6 +28,25 @@
   margin-top: 8px;
 }
 
-// .card-senior .card-senior-infos {
-//   padding: 16px;
-// }
+#full-name {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 0;
+}
+
+#member-since {
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+
+.about p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 25px;
+}
+
+.about p:nth-child(2) {
+  width: 60%;
+  font-size: 16px;
+}

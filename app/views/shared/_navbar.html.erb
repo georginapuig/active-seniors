@@ -1,7 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "Active Seniors", root_path, class: "nav-link nav-logo" %>
+  <%= link_to root_path, class: "nav-link nav-logo" do %>
+    <%= image_tag "logo_as.png" %>
+  <% end %>
   
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,13 +16,6 @@
         </li> -->
         <!-- <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
-        </li> -->
-        <!-- <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
         </li> -->
         <li class="nav-item">
           <%= link_to "Seniors skills", offers_path, class: "nav-link" %>

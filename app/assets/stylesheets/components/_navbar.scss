@@ -12,15 +12,16 @@
 }
 
 // logo
-.nav-logo {
+.nav-logo img {
+  width: 150px;
+  height: auto;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 600;
-  font-size: 18px;
   transition: .3s;
 }
 
-.nav-logo:hover {
-  color: #f1b158;
+.nav-logo img:hover {
+  opacity: .8;
 }
 
 // buttons
