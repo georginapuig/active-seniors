@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="h2-index">Choose among 43 experienced seniors in your area.</h2>
+  <h2 class="h2-index">Choose your Active Senior</h2>
   <!-- card -->
   <div class="d-flex  card-senior p-5">
     <!-- left -->
@@ -40,20 +40,20 @@
         <p>Location</p>
         <sub><%= @offer.location %></sub>
       </div>
-      <div id="show-map"></div>
+      <!-- map -->
+      <div id="show-map"
+        style="height: auto;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    
+      <!-- add mapbox to show page -->
+      <%= content_for(:js_before_body) do %>
+        <%= javascript_pack_tag 'mapbox' %>
+      <% end %>
+  </div>
     </div>
   </div>
-
-  <!-- map -->
-    <div id="map"
-      data-markers="<%= [@marker].to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
-    <%= content_for(:js_before_body) do %>
-      <%= javascript_pack_tag "mapbox" %>
-    <% end %>
-</div>
 
 
 
