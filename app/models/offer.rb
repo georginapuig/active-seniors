@@ -1,4 +1,10 @@
 class Offer < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_by_location,
+    against: [ :location ],
+    using: {
+      tsearch: { prefix: true }
+  }
   belongs_to :category, :class_name => "Category"
   belongs_to :subcategory, :class_name => "Category"
   belongs_to :user
