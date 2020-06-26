@@ -7,24 +7,37 @@
       <img src=<%= @offer.user.photo %> />
       <div class="card-bottom-left">
         <p><%= @offer.user.first_name %>, <%= @offer.user.age %></p>
-        <p>Member since 
-          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+        <p>Member since
+          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
           <%= rand(2015..2020) %>
         </p>
         <p>
           <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
           <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
-        </p>              
+        </p>
       </div>
       <div>
         <p>About</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
-    
+
     <!-- right -->
   </div>
+
+  <!-- map -->
+    <div id="map"
+      data-markers="<%= [@marker].to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+    <%= content_for(:js_before_body) do %>
+      <%= javascript_pack_tag "mapbox" %>
+    <% end %>
 </div>
+
+
+
 
 
 
