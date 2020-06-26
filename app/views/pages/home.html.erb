@@ -92,7 +92,10 @@
               <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
               <p>Member since Jun 2020</p>
               <!-- <p>&#11088; 4.91 (15)</p> -->
-              <p><i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i><%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)</p>
+              <p>
+                <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
+                <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
+              </p>
             </div>
             <!-- bottom right -->
             <div class="card-bottom-right">
