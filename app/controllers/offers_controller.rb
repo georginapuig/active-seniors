@@ -42,12 +42,12 @@ class OffersController < ApplicationController
   end
 
   def show
-     @marker = {
+     @marker = [{
           lat: @offer.latitude,
           lng: @offer.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { offer: @offer }),
           image_url: helpers.asset_url('pin.png')
-        }
+        }]
   end
 
   def new

@@ -41,6 +41,8 @@ men_pics = [
   'https://res.cloudinary.com/dbjx0xfid/image/upload/v1592996177/Seniors/m13.jpg'
 ]
 
+location = ["London", "Manchester", "Birmingham", "Leeds-Bradford", "Glasgow", "Southampton-Portsmouth", "Liverpool", "Newcastle", "Nottingham", "Sheffield", "Bristol", "Belfast", "Leicester"]
+
 female_pics.each do |picture|
   user_2 = User.create!(
     first_name: Faker::Name.female_first_name,
@@ -106,7 +108,7 @@ User.all.each do |user|
     subcategory_id: category_1.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location: location.sample,
     price: prices.sample,
   )
 end
@@ -117,7 +119,7 @@ User.all.each do |user|
     subcategory_id: category_2.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location: location.sample,
     price: prices.sample,
   )
 end
@@ -128,7 +130,7 @@ User.all.each do |user|
     subcategory_id: category_3.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location: location.sample,
     price: prices.sample,
   )
 end
@@ -139,7 +141,7 @@ User.all.each do |user|
     subcategory_id: category_4.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location: location.sample,
     price: prices.sample,
   )
 end
@@ -150,7 +152,7 @@ User.all.each do |user|
     subcategory_id: category_5.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location: location.sample,
     price: prices.sample,
   )
 end
@@ -161,7 +163,7 @@ User.all.each do |user|
     subcategory_id: category_6.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location: location.sample,
     price: prices.sample,
   )
 end
