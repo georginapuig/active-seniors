@@ -2,11 +2,10 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    filter = params["q"]
-
-    if filter.nil?
-      @offers = Offer.geocoded.shuffle
-
+    filter = params[:location]
+    if filter.present?
+      #@offers = Offer.geocoded.shuffle
+      @offers = Offer.search_by_location(params[:location])
       @markers = @offers.map do |offer|
         {
           lat: offer.latitude,
