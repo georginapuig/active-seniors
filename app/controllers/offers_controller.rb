@@ -2,8 +2,9 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    filter = params[:location]
-    if filter.present?
+    location = params[:location]
+    category = params[:q]
+    if location.present?
       #@offers = Offer.geocoded.shuffle
       @offers = Offer.search_by_location(params[:location])
       @markers = @offers.map do |offer|
@@ -14,11 +15,22 @@ class OffersController < ApplicationController
           image_url: helpers.asset_url('pin.png')
         }
       end
-    else
-      id = Category.where(name: "#{filter}").first.id
+    elsif category.present?
+      id = Category.where(name: "#{category}").first.id
       @offers = Offer.where(category_id: id).geocoded.shuffle
 
       @markers = @offers.map do |offer|
+        {
+          lat: offer.latitude,
+          lng: offer.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
+          image_url: helpers.asset_url('pin.png')
+        }
+      end
+    else
+      @offers = Offer.all.geocoded.shuffle
+
+        @markers = @offers.map do |offer|
         {
           lat: offer.latitude,
           lng: offer.longitude,
@@ -36,7 +48,6 @@ class OffersController < ApplicationController
           infoWindow: render_to_string(partial: "info_window", locals: { offer: @offer }),
           image_url: helpers.asset_url('pin.png')
         }
-        parsed_marker = @marker.to_json
   end
 
   def new
