@@ -30,6 +30,13 @@ class OffersController < ApplicationController
   end
 
   def show
+     @marker = {
+          lat: @offer.latitude,
+          lng: @offer.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { offer: @offer }),
+          image_url: helpers.asset_url('pin.png')
+        }
+        parsed_marker = @marker.to_json
   end
 
   def new
@@ -40,7 +47,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
 
     @offer.user = current_user
-    
+
     if @offer.save
       redirect_to root_path
     else

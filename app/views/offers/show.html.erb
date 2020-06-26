@@ -14,7 +14,7 @@
         <p>
           <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
           <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
-        </p>              
+        </p>
       </div>
       <div class="about">
         <p>About</p>
@@ -43,7 +43,20 @@
       <div id="show-map"></div>
     </div>
   </div>
+
+  <!-- map -->
+    <div id="map"
+      data-markers="<%= [@marker].to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+    <%= content_for(:js_before_body) do %>
+      <%= javascript_pack_tag "mapbox" %>
+    <% end %>
 </div>
+
+
+
 
 
 

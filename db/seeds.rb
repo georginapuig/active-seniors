@@ -128,7 +128,7 @@ User.all.each do |user|
     subcategory_id: category_3.subcategories.sample.id,
     user_id: user.id,
     description: description,
-    location: Faker::Address.city,
+    location::Address.city,
     price: prices.sample,
   )
 end
