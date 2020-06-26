@@ -1,7 +1,7 @@
 <!-- <p id="notice"><%= notice %></p> -->
 
 <div id="container-index" class="container">
-  <h2 class="h2-index">Choose among 43 experienced seniors in your area.</h2>
+  <h2 class="h2-index">Choose among <%= Offer.all.count %> experienced seniors in your area.</h2>
   <div class="d-flex">
     <!-- cards -->
     <div id="cards" class="">
@@ -27,7 +27,7 @@
               <div class="card-bottom-left">
                 <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
                 <p>Member since Jun 2020</p>
-                <p>&#11088; 4.91 (15)</p>
+                <p><i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i> 4.91 (15)</p>
               </div>
               <!-- bottom right -->
               <div class="card-bottom-right">
@@ -40,13 +40,14 @@
     </div>
 
     <!-- map -->
-      <div id="map"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-        <%= content_for(:js_before_body) do %>
-        <%= javascript_pack_tag "mapbox" %>
-        <% end %>
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+    <%= content_for(:js_before_body) do %>
+      <%= javascript_pack_tag "mapbox" %>
+    <% end %>
   </div>
 </div>
 
