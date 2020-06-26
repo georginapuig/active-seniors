@@ -11,7 +11,8 @@ class OffersController < ApplicationController
         {
           lat: offer.latitude,
           lng: offer.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer })
+          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
+          image_url: helpers.asset_url('pin.png')
         }
       end
     else
@@ -22,7 +23,8 @@ class OffersController < ApplicationController
         {
           lat: offer.latitude,
           lng: offer.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer })
+          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
+          image_url: helpers.asset_url('pin.png')
         }
       end
     end
