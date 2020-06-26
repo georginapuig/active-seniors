@@ -1,9 +1,9 @@
 <div class="container">
   <h2 class="h2-index">Choose among 43 experienced seniors in your area.</h2>
   <!-- card -->
-  <div class="card-senior p-5">
+  <div class="d-flex  card-senior p-5">
     <!-- left -->
-    <div>
+    <div class="left">
       <img src=<%= @offer.user.photo %> />
       <div class="card-bottom-left">
         <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
@@ -23,6 +23,13 @@
     </div>
 
     <!-- right -->
+    <div class="right">
+      <div id="top-right" class="top-text-card">
+        <h2 id="category-h2"><%= @offer.category.name %></h2>
+        <p id="subcategory-p"><%= @offer.subcategory.name %></p>
+      </div>
+    </div>
+    </div>
   </div>
 </div>
 

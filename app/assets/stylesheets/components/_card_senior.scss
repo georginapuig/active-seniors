@@ -6,9 +6,17 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.left {
+  width: 60%;
+}
+
+.right {
+  width: 40%;
+}
+
 .card-senior img {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
   background-position: center;
   border-radius: 2px;
@@ -28,6 +36,7 @@
   margin-top: 8px;
 }
 
+// left
 #full-name {
   font-size: 20px;
   font-weight: 500;
@@ -47,6 +56,22 @@
 }
 
 .about p:nth-child(2) {
-  width: 60%;
   font-size: 16px;
+}
+
+// right
+#category-h2 {
+  font-family: "Work Sans";
+  font-size: 28px;
+}
+
+#subcategory-p {
+  font-weight: 400;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+#sub {
+  font-size: 18px;
 }
