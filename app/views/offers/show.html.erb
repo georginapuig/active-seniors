@@ -6,8 +6,8 @@
     <div>
       <img src=<%= @offer.user.photo %> />
       <div class="card-bottom-left">
-        <p><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
-        <p>Member since 
+        <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
+        <p id="member-since">Member since 
           <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
           <%= rand(2015..2020) %>
         </p>
@@ -16,7 +16,7 @@
           <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
         </p>              
       </div>
-      <div>
+      <div class="about">
         <p>About</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
