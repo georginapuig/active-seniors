@@ -1,0 +1,26 @@
+
+.btn-show,
+.btn-submit-review {
+  background-color: #E7A142; 
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-show:hover,
+.btn-submit-review:hover {
+  background-color: #f1af51;
+  color: white;
+}
+
+// show buttons
+.btn-show {
+  padding: 12px 18px;
+}
+
+// submit a review button
+.btn-submit-review {
+  font-size: 15px;
+  padding: 10px 15px; 
+}

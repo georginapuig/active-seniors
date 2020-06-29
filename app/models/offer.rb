@@ -13,4 +13,7 @@ class Offer < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   has_one_attached :photo
+
+  has_many :bookings
+  has_many :reviews
 end
