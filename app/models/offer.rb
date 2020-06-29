@@ -14,6 +14,6 @@ class Offer < ApplicationRecord
 
   has_one_attached :photo
 
-    has_many :bookings
-    has_many :reviews, through: :bookings
+  has_many :bookings
+  has_many :reviews
 end

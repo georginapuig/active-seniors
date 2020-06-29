@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.offer = @offer
 
-    if review.save
+    if @review.save!
       redirect_to offer_path(@offer)
     else
       render "offers/show"
