@@ -74,11 +74,18 @@
   margin: 0;
 }
 
-.availability, 
+.availability,
 .location,
 .price {
-  padding-top: 20px;
   text-align: right;
+ }
+
+.location {
+  padding-top: 20px;
+}
+
+.availability, .price {
+  padding-top: 30px;
 }
 
 .availability p:nth-of-type(1) {
