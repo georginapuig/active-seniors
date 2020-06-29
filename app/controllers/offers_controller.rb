@@ -29,6 +29,8 @@ class OffersController < ApplicationController
         }
       end
     else
+      @offers = Offer.all.geocoded.shuffle
+
       @markers = @offers.map do |offer|
       {
         lat: offer.latitude,
