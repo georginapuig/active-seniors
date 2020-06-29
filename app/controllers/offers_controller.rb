@@ -42,6 +42,8 @@ class OffersController < ApplicationController
   end
 
   def show
+    @offers = Offer.all.shuffle.first(6)
+    
     @marker = {
       lat: @offer.latitude,
       lng: @offer.longitude,
