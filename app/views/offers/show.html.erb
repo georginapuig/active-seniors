@@ -72,7 +72,7 @@
       </button>
        <!-- modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Reviews</h5>
@@ -81,13 +81,27 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="modal-dialog modal-dialog-scrollable">
-                Lorem ipsum dolor sit amet, sit eius alienum concludaturque cu, tempor dolorum no duo. Torquatos consequuntur his ea. Te prima mnesarchum pri, eu rationibus instructior mei. Tation perfecto sententiae in mei.
-                <br>
-                Et magna elaboraret his. Dicat quaestio contentiones nec ut, te nam modo noster conclusionemque, electram constituto vis ex. Laudem senserit his ex. Lucilius perfecto usu ne, pro habeo aliquam sententiae ex.
-                <br>
-                Modo blandit sea ad, ex volutpat similique cum. Nobis saperet quo ne. Natum perpetua consectetuer ut eum, usu et facer omnesque. Sea id porro qualisque, est ex eros tamquam, prima oblique vel at.
-              </div>
+                <!-- form review -->
+                <div>
+                  <%= simple_form_for [ @offer, @review ] do |f| %>
+                    <%= f.input :rating, collection: 1..5 %>
+                    <%= f.input :feedback, as: :text, label: :Review, class: "label-form" %>
+                    <%= f.button :submit, "Submit a review", class: "form-actions btn-submit-review mb-3" %>
+                  <% end %>
+                </div>
+                <!-- users reviews -->
+                <div>
+                  <% if @offer.reviews.blank? %>
+                    Be the first to leave a review for <%= @offer.user.first_name %>
+                  <% else %>
+                    <% @offer.reviews.each do |review| %>
+                      <div>
+                        <p class="mb-0" id="review-<%= review.id %>"><%= review.feedback %></p>
+                        <p class="mb-0" id="review-<%= review.id %>"> <%= "⭐" * review.rating %></p>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>  
             </div>
           </div>
         </div>

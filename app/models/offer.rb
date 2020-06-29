@@ -14,5 +14,6 @@ class Offer < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :reviews, dependent: :destroy
+    has_many :bookings
+    has_many :reviews, through: :bookings
 end

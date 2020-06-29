@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
     resources :bookings, only: [:new, :create]
   end
+  resources :reviews, only: [ :destroy ]
   resources :bookings, only: :index
   get "/bookings/:id/chat", to: "chatrooms#show", as: :chat
 end

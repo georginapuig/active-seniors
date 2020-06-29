@@ -43,6 +43,8 @@ class OffersController < ApplicationController
   end
 
   def show
+    @review = Review.new
+
     if params[:lat] && params[:lng]
       @offers = Offer.near([params[:lat], params[:lng]], 5).first(6)
       if @offers.size == 0
