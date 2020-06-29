@@ -5,8 +5,9 @@ class OffersController < ApplicationController
     location = params[:location]
     category = params[:q]
     if location.present?
-      #@offers = Offer.geocoded.shuffle
+      # @offers = Offer.geocoded.shuffle
       @offers = Offer.search_by_location(params[:location])
+
       @markers = @offers.map do |offer|
         {
           lat: offer.latitude,
@@ -28,15 +29,13 @@ class OffersController < ApplicationController
         }
       end
     else
-      @offers = Offer.all.geocoded.shuffle
-
-        @markers = @offers.map do |offer|
-        {
-          lat: offer.latitude,
-          lng: offer.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
-          image_url: helpers.asset_url('pin.png')
-        }
+      @markers = @offers.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { offer: offer }),
+        image_url: helpers.asset_url('pin.png')
+      }
       end
     end
   end
