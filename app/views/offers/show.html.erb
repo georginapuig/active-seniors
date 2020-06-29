@@ -92,7 +92,7 @@
                 <!-- users reviews -->
                 <div>
                   <% if @offer.reviews.blank? %>
-                    Be the first to leave a review for <%= @offer.user.first_name %>
+                    <p style="color: #818080;">Be the first to leave a review for <%= @offer.user.first_name %></p>
                   <% else %>
                     <% @offer.reviews.each do |review| %>
                       <div>
