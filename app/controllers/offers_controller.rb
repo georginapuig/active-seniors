@@ -43,7 +43,14 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offers = Offer.all.shuffle.first(6)
+    if params[:lat] && params[:lng]
+      @offers = Offer.near([params[:lat], params[:lng]], 5).first(6)
+      if @offers.size == 0
+        @offers = Offer.all.shuffle.first(6)
+      end
+    else
+      @offers = Offer.all.shuffle.first(6)
+    end
     
     @marker = {
       lat: @offer.latitude,
