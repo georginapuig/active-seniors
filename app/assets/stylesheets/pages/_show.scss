@@ -1,7 +1,14 @@
 // buttons
 .btn-show {
+  padding: 12px 18px;
   background-color: #E7A142; 
   border: none;
-  border-radius: 16px;
-  color: rgb(247, 182, 182);
+  border-radius: 25px;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-show:hover {
+  background-color: #f1af51;
+  color: white;
 }
