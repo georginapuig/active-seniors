@@ -34,6 +34,8 @@ gem 'bootstrap4-datetime-picker-rails'
 
 gem 'stripe'
 
+gem 'money-rails'
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
