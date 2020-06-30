@@ -117,6 +117,11 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    json (2.3.1)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -145,6 +150,11 @@ GEM
     pg_search (2.3.2)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
+    postmark (1.21.1)
+      json
+    postmark-rails (0.20.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.15)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -277,9 +287,11 @@ DEPENDENCIES
   font-awesome-sass
   geocoder
   jbuilder (~> 2.7)
+  letter_opener
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pg_search (~> 2.3.0)
+  postmark-rails
   pry-byebug
   pry-rails
   puma (~> 4.1)
