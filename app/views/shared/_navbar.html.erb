@@ -23,6 +23,9 @@
           </li>
         <% end %>
         <li class="nav-item">
+          <%= link_to "My Account", edit_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% else %>
