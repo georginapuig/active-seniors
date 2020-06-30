@@ -1,5 +1,9 @@
 class CheckoutsController < ApplicationController
   def new
-    raise
+    @checkout = Checkout.new
+  end
+
+  def show
+    @checkout = Checkout.find(partams[:id])
   end
 end

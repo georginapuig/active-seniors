@@ -32,6 +32,8 @@ gem 'pg_search', '~> 2.3.0'
 
 gem 'bootstrap4-datetime-picker-rails'
 
+gem 'stripe'
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
