@@ -29,6 +29,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'geocoder'
 
 gem 'pg_search', '~> 2.3.0'
+# email faker. a new tab will open in the browser to show the mail you just sent
+gem 'letter_opener', group: :development
 
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
