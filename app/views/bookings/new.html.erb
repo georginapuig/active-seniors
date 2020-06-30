@@ -1,0 +1,10 @@
+
+<div class="container col-6">
+  <%= simple_form_for([@offer, @booking]) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+    <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+  <% end %>
+</div>
+
