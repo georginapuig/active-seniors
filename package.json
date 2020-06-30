@@ -9,6 +9,7 @@
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
+    "jquery-bar-rating": "^1.2.2",
     "mapbox-gl": "^1.11.0",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
