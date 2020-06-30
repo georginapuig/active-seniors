@@ -92,12 +92,16 @@
                 <!-- users reviews -->
                 <div>
                   <% if @offer.reviews.blank? %>
-                    <p style="color: #818080;">Be the first to leave a review for <%= @offer.user.first_name %></p>
+                    <p style="color: #818080;">
+                      Be the first to leave a review for <%= @offer.user.first_name %>
+                    </p>
                   <% else %>
                     <% @offer.reviews.each do |review| %>
-                      <div>
-                        <p class="mb-0" id="review-<%= review.id %>"><%= review.feedback %></p>
-                        <p class="mb-0" id="review-<%= review.id %>"> <%= "⭐" * review.rating %></p>
+                      <div class="mt-4 mb-4">
+                        <p class="mb-0">
+                          <%= content_tag( :i, '', :class=>'fa fa-star', :style=>'color: #E7A142') * review.rating %>
+                        </p>
+                        <p><%= review.feedback %></p>
                       </div>
                     <% end %>
                   <% end %>
