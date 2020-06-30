@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_153213) do
+ActiveRecord::Schema.define(version: 2020_06_30_202907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,19 @@ ActiveRecord::Schema.define(version: 2020_06_30_153213) do
     t.index ["booking_id"], name: "index_chatrooms_on_booking_id"
   end
 
+  create_table "checkouts", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "USD", null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_checkouts_on_offer_id"
+    t.index ["user_id"], name: "index_checkouts_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "chatroom_id", null: false
@@ -74,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_06_30_153213) do
   create_table "offers", force: :cascade do |t|
     t.text "description"
     t.string "location"
-    t.integer "price"
     t.bigint "category_id", null: false
     t.bigint "subcategory_id", null: false
     t.bigint "user_id", null: false
@@ -119,6 +131,8 @@ ActiveRecord::Schema.define(version: 2020_06_30_153213) do
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
   add_foreign_key "chatrooms", "bookings"
+  add_foreign_key "checkouts", "offers"
+  add_foreign_key "checkouts", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "offers", "categories"
   add_foreign_key "offers", "categories", column: "subcategory_id"
