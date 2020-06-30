@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # delivering the email from model (on callback)
   def send_welcome_email
-    UserMailer.with(user: self).welcome.deliver_now
+    UserMailer.welcome(self).deliver_now
   end
 end
 
