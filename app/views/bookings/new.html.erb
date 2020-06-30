@@ -28,11 +28,12 @@
     </div>
 </div>
 
-<div>
-  <%= simple_form_for([@offer, @booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-<% end %>
+<div class="container d-flex justify-content-center mb-5">
+    <%= simple_form_for([@offer, @booking]) do |f| %>
+        <%= f.input :start_date, label: "From:" %>
+        <%= f.input :end_date, label: "To:" %>
+        <%= f.button :submit, class: "btn btn-show" %>
+    <% end %>
 </div>
 
 
