@@ -7,8 +7,8 @@
       <img src=<%= @offer.user.photo %> />
       <div class="card-bottom-left">
         <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
-        <p id="member-since">Member since 
-          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+        <p id="member-since">Member since
+          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
           <%= rand(2015..2020) %>
         </p>
         <p>
@@ -49,7 +49,7 @@
         <%= javascript_pack_tag "mapbox" %>
       <% end %>
     </div>
-  
+
   </div>
 
   <!-- buttons -->
@@ -57,12 +57,11 @@
     <!-- booking button -->
     <div class="mr-4">
       <!-- button -->
-      <button type="button" class="btn btn-show" data-toggle="modal" data-target="">
-        Book now
-      </button>
+    <div class="btn btn-show">
+        <%= link_to "Book now", new_offer_booking_path(@offer) %>
         <!-- modal -->
-     
     </div>
+  </div>
 
     <!-- reviews button -->
     <div class="mr-4">
@@ -105,7 +104,7 @@
                       </div>
                     <% end %>
                   <% end %>
-                </div>  
+                </div>
             </div>
           </div>
         </div>
@@ -178,8 +177,8 @@
             <!-- bottom left -->
             <div class="card-bottom-left">
               <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
-              <p>Member since 
-                <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+              <p>Member since
+                <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
                 <%= rand(2015..2020) %>
               </p>
               <!-- <p>&#11088; 4.91 (15)</p> -->
