@@ -5,7 +5,11 @@ class CheckoutsController < ApplicationController
 
   def create
     @checkout = Checkout.new(checkout_params)
-
+    if @checkout.save
+      redirect_to payment_path
+    else
+      render new
+    end
   end
 
   def show
@@ -15,6 +19,6 @@ class CheckoutsController < ApplicationController
   private
 
   def checkout_params
-    params.require(:checkout).permit()
+    params.require(:checkout).permit(:user_id, :offer_id, :checkout_session_id, :amount_currency, :amount_cents, :state)
   end
 end

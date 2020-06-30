@@ -1,4 +1,6 @@
 class Offer < ApplicationRecord
+   monetize :price_cents
+
   include PgSearch::Model
   pg_search_scope :search_by_location,
     against: [ :location ],
@@ -14,6 +16,6 @@ class Offer < ApplicationRecord
 
   has_one_attached :photo
 
-  has_many :bookings
-  has_many :reviews
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 end
