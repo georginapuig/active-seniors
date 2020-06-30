@@ -28,16 +28,23 @@
     </div>
 </div>
 
-<div class="container d-flex justify-content-center mb-5">
-
-    <%= simple_form_for([@offer, @booking]) do |f| %>
-      <%= f.error_notification %>
-
-      <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
-      <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
-
-      <%= f.submit "Book", class: "btn btn-show" %>
-    <% end %>
+<div>
+  <%= simple_form_for([@offer, @booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+<% end %>
 </div>
+
+
+
+<!-- <div class="container">
+      <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="datetimepicker13"></div>
+            </div>
+        </div>
+      </div>
+</div> -->
 
 
