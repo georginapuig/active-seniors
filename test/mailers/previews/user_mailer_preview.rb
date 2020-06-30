@@ -7,4 +7,9 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.welcome(user)
   end
 
+  # def booking_confirmation
+  #   booking = # complete this after booking feature is done
+  #   UserMailer.booking_confirmation(booking)
+  # end
+
 end
