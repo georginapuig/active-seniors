@@ -10,7 +10,9 @@
 @import 'mapbox-gl/dist/mapbox-gl';
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 @import "jquery-bar-rating/dist/themes/css-stars";
+@import "tempusdominus-bootstrap-4.css";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/checkout_new";

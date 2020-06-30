@@ -19,5 +19,3 @@ class User < ApplicationRecord
     UserMailer.welcome(self).deliver_now
   end
 end
-
-# rails g migration AddUsernameToUsers
