@@ -85,7 +85,7 @@
                 <div>
                   <%= simple_form_for [ @offer, @review ] do |f| %>
                     <%= f.input :rating, collection: 1..5 %>
-                    <%= f.input :feedback, as: :text, label: :Review, class: "label-form" %>
+                    <%= f.input :feedback, as: :text, label: :Review %>
                     <%= f.button :submit, "Submit a review", class: "form-actions btn-submit-review mb-3" %>
                   <% end %>
                 </div>
@@ -101,7 +101,7 @@
                         <p class="mb-0">
                           <%= content_tag( :i, '', :class=>'fa fa-star', :style=>'color: #E7A142') * review.rating %>
                         </p>
-                        <p><%= review.feedback %></p>
+                        <p style="color: #3a3a3a;"><%= review.feedback %></p>
                       </div>
                     <% end %>
                   <% end %>
