@@ -25,6 +25,7 @@ require("channels");
 // External imports
 import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
+import { initStarRating } from '../plugins/init_star_rating';
 // import { initGeolocation } from '../plugins/init_geolocation.js';
 
 // Internal imports, e.g:
@@ -34,6 +35,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initAutocomplete();
+  initStarRating();
   // initGeolocation();
 });
 
