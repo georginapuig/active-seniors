@@ -1,6 +1,8 @@
 class CheckoutsController < ApplicationController
   def new
     @checkout = Checkout.new
+    @booking = Booking.find(params[:booking_id])
+    @hours = (@booking.end_date - @booking.start_date) / 3600
   end
 
   def create

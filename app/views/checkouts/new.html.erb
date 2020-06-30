@@ -6,40 +6,40 @@
         <div class="divTableHead"><%= Date.today %></div>
       </div>
       <div class="divTableRow">
-        <div class="divTableCell"><strong>Active Senior:</strong><br /> Name: Caio Andrade <%=  %><br /> Location: Mexico City <%=  %></div>
-        <div class="divTableCell"><strong>Customer:</strong><br /> Name: Benjamin Hernandez <%=  %><br /></div>
+        <div class="divTableCell"><strong>Active Senior:</strong><br /> Name: <%= @booking.offer.user.first_name %> <%=  %><br /> Location: Mexico City <%=  %></div>
+        <div class="divTableCell"><strong>Customer:</strong><br /> Email: <%= @booking.user.email %> <br /></div>
       </div>
     </div>
     <div class="divTableBody">
       <div class="divTableRow">
          <div class="divTableHead"> Category </div>
-         <div class="divTableHead"> Home & Kids</div>
+         <div class="divTableHead"> <%= @booking.offer.category.name %> </div>
       </div>
       <div class="divTableRow">
          <div class="divTableCell"> Subcategory </div>
-         <div class="divTableCell"> Looking after kids </div>
+         <div class="divTableCell"> <%= @booking.offer.subcategory.name %> </div>
       </div>
       <div class="divTableRow">
          <div class="divTableCell"> Hours </div>
-         <div class="divTableCell"> 2 </div>
+         <div class="divTableCell"> <%= @hours %> </div>
       </div>
       <div class="divTableRow">
         <div class="divTableCell"> Hourly rate </div>
-        <div class="divTableCell"> 50.00</div>
+        <div class="divTableCell"> <%= @booking.offer.price %> </div>
       </div>
     </div>
     <div class="divTableFoot">
       <div class="divTableRow">
         <div class="divTableHead">Subtotal</div>
-        <div class="divTableCell">$ 100.00</div>
+        <div class="divTableCell"> <%= @subtotal %></div>
       </div>
       <div class="divTableRow">
         <div class="divTableHead">VAT 20%</div>
-        <div class="divTableCell">$ 20.00</div>
+        <div class="divTableCell"> $ 20.00 </div>
       </div>
       <div class="divTableRow">
         <div class="divTableHead">Grand Total</div>
-        <div class="divTableCell">$ 120.00</div>
+        <div class="divTableCell">$ 120.00 </div>
       </div>
     </div>
     <br>
