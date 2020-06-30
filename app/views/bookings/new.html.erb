@@ -1,11 +1,43 @@
+<div class="cards d-flex justify-content-center mb-5">
 
-<div class="container col-3">
-  <%= simple_form_for([@offer, @booking]) do |f| %>
-    <%= f.error_notification %>
+  <div class="card-advertisement d-flex flex-column mb-5">
+    <div class="d-flex top-card">
+      <img src=<%= @offer.user.photo %> />
+        <div class="top-text-card">
+          <h2><%= @offer.category.name %></h2>
+          <p><%= @offer.subcategory.name %></p>
+          <sub><%= @offer.location %></sub>
+        </div>
+    </div>
+    <div class="d-flex bottom-card">
+      <div class="card-bottom-left">
+        <p><%= @offer.user.first_name %>, <%= @offer.user.age %></p>
+        <p>Member since
+          <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
+          <%= rand(2015..2020) %>
+        </p>
+          <!-- <p>&#11088; 4.91 (15)</p> -->
+        <p>
+          <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
+          <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
+        </p>
+      </div>
+      <div class="card-bottom-right">
+         <p>$<%= @offer.price %>/h</p>
+      </div>
+    </div>
+  </div>
 
-    <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
-    <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
-    <%= f.submit "Book", class: "btn btn-show" %>
-  <% end %>
+  <div class="container d-flex justify-content-center mb-5">
+
+    <%= simple_form_for([@offer, @booking]) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+      <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+
+      <%= f.submit "Book", class: "btn btn-show" %>
+    <% end %>
+  </div>
 </div>
 

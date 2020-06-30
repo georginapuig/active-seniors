@@ -16,10 +16,4 @@ class Offer < ApplicationRecord
 
   has_many :bookings
   has_many :reviews
-
-  # def unavailable_dates
-  #   bookings.pluck(:start_date, :end_date).map do |range|
-  #     { from: range[0], to: range[1] }
-  #   end
-  # end
 end
