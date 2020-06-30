@@ -1,0 +1,35 @@
+#login-h2 {
+  font-family: 'Work Sans';
+  font-weight: 600;
+}
+
+// labels
+.user_email label,
+.user_password label,
+.form-check label {
+  color: $dark-gray;
+}
+
+// links and remember me
+.form-check label,
+.form-links {
+  font-size: 14px;
+  color: rgb(146, 146, 146);
+  transition: .3s;
+}
+
+.form-links:hover {
+  color: rgb(146, 146, 146);
+}
+
+// button
+.form-actions .btn {
+  width: 100%;
+  color: white;
+  background-color: $orange;
+  transition: .3s;
+}
+
+.form-actions .btn:hover {
+  background-color: #f0ac4d;
+}
