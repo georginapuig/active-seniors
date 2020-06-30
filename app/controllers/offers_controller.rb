@@ -3,11 +3,20 @@ class OffersController < ApplicationController
 
   def index
     location = params[:location]
+    categ = params[:category]
+    subcateg = params[:subcategory]
     category = params[:q]
+    result = Offer.search_by_location(params[:location])
     if location.present?
-      # @offers = Offer.geocoded.shuffle
-      @offers = Offer.search_by_location(params[:location])
-
+      if categ.present?
+        if subcateg.present?
+          @offers = result.where(subcategory_id: subcateg.to_i)
+        else
+          @offers = result.where(category_id: categ.to_i)
+        end
+      else
+        @offers = result
+      end
       @markers = @offers.map do |offer|
         {
           lat: offer.latitude,
