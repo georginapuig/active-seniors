@@ -6,9 +6,23 @@
   <div class="container text-left">
     <h1 class="header-h1 ">Find an experienced senior on the skill you need</h1>
     <form class="form-header text-left" action="/offers">
+
       <input type="text" name="location" id="header-text-input" placeholder="Enter location">
-      <input type="text" name="category" id="header-text-input" placeholder="Choose category">
-      <input type="text" name="subcategory" id="header-text-input" placeholder="Choose subcategory">
+      
+      <select name="category" id="header-text-input">
+        <option value="">Select category</option>
+        <% Category.categories.each do |category| %>
+          <option value="<%=category.id%>"><%=category.name%></option> 
+        <% end %>
+      </select>
+      
+      <select name="subcategory" id="header-text-input">
+        <option value="">Select subcategory</option>
+        <% Category.subcategories.each do |subcategory| %>
+          <option value="<%=subcategory.id%>"><%=subcategory.name%></option> 
+        <% end %>
+      </select>
+      
       <input type="submit" value="Search" id="header-submit-input">
     </form>
   </div>
@@ -110,3 +124,4 @@
     <% end %>
   </div>
 </div>
+  
