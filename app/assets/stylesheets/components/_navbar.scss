@@ -31,17 +31,17 @@
 }
 
 .btn-senior {
-  // background-color: #E7A142;
+  // background-color: $orange;
   display: block;
   padding: 0.5rem 1rem;
-  color: #E7A142;
+  color: $orange;
   font-weight: 600;
   border-radius: 30px;
   transition: .3s;
 }
 
 .btn-senior:hover {
-  // background-color: #E7A142;
+  // background-color: $orange;
   color: #f5b862;
 }
 
