@@ -13,10 +13,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.offer = @offer
     @booking.user = current_user
-    
+
     if @booking.save
       UserMailer.booking_confirmation(@booking).deliver_now
-      redirect_to new_offer_booking_checkout_path(@offer, @booking)
+      redirect_to new_booking_checkout_path(@booking)
     else
       render 'offers/show'
     end

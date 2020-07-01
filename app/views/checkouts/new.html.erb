@@ -6,7 +6,7 @@
         <div class="divTableHead"><%= Date.today %></div>
       </div>
       <div class="divTableRow">
-        <div class="divTableCell"><strong>Active Senior:</strong><br /> Name: <%= @booking.offer.user.first_name %> <%=  %><br /> Location: Mexico City <%=  %></div>
+        <div class="divTableCell"><strong>Active Senior:</strong><br /> Name: <%= @booking.offer.user.first_name %> <%=  %><br /> Location: <%= @booking.offer.location %> <%=  %></div>
         <div class="divTableCell"><strong>Customer:</strong><br /> Email: <%= @booking.user.email %> <br /></div>
       </div>
     </div>
@@ -51,9 +51,8 @@
       </div>
     </div>
     <br>
-    <%= form_tag payment_path do %>
-      <%= hidden_field_tag 'offer_id', @offer.id %>
-      <%= submit_tag 'Proceed to Payment', class: 'btn btn-show' %>
+    <%=   simple_form_for([@booking, @checkout]) do |f| %>
+      <%= f.submit "Proceed to payment" %>
     <% end %>
 </div>
 
