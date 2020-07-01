@@ -20,6 +20,14 @@
          <div class="divTableCell"> <%= @booking.offer.subcategory.name %> </div>
       </div>
       <div class="divTableRow">
+         <div class="divTableCell"> Date/ Time from </div>
+         <div class="divTableCell"> <%= @booking.start_date %> </div>
+      </div>
+      <div class="divTableRow">
+         <div class="divTableCell"> Date / Time to </div>
+         <div class="divTableCell"> <%= @booking.end_date %> </div>
+      </div>
+      <div class="divTableRow">
          <div class="divTableCell"> Hours </div>
          <div class="divTableCell"> <%= @hours %> </div>
       </div>
@@ -43,8 +51,9 @@
       </div>
     </div>
     <br>
-    <div class="btn btn-show">
-        <%= link_to "Proceed to Payment", root_path %>
-    </div>
+    <%= form_tag checkout_path do %>
+      <%= hidden_field_tag 'offer_id', @offer.id %>
+      <%= submit_tag 'Proceed to Payment', class: 'btn btn-show' %>
+    <% end %>
 </div>
 
