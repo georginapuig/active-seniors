@@ -3,6 +3,9 @@ class CheckoutsController < ApplicationController
     @checkout = Checkout.new
     @booking = Booking.find(params[:booking_id])
     @hours = (@booking.end_date - @booking.start_date) / 3600
+    # @subtotal =
+    # @vat =
+    # @grand_total =
   end
 
   def create

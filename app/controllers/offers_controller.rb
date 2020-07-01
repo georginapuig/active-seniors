@@ -62,7 +62,7 @@ class OffersController < ApplicationController
     else
       @offers = Offer.all.shuffle.first(6)
     end
-    
+
     @marker = {
       lat: @offer.latitude,
       lng: @offer.longitude,
