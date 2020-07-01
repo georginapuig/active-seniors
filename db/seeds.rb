@@ -8,9 +8,11 @@
 
 require "faker"
 
-Offer.destroy_all
-Category.destroy_all
-User.destroy_all
+Offer.destroy_all if Rails .env.development?
+Category.destroy_all if Rails .env.development?
+User.destroy_all if Rails .env.development?
+
+puts "Creating seeds...."
 
 female_pics = [
   'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593006095/Seniors/w1.jpg',
@@ -165,4 +167,6 @@ User.all.each do |user|
     price: prices.sample,
   )
 end
+
+puts "Successfully finished creating the seeds!"
 
