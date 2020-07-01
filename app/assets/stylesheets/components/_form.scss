@@ -1,5 +1,6 @@
 #login-h2,
-#edit-h2 {
+#edit-h2,
+#signup-h2 {
   font-family: 'Work Sans';
   font-weight: 600;
 }
@@ -15,16 +16,22 @@
 
 // links and remember me
 .form-check label,
-.form-links {
+.form-links,
+.signup-links {
   font-size: 14px;
   color: rgb(146, 146, 146);
   transition: .3s;
 }
 
-.form-links:hover {
+.form-links:hover,
+.signup-links a:hover {
   color: $orange;
 }
 
-.unhappy {
-  font-size: 14px;
+.signup-links a {
+  font-size: 14px; 
+  color: rgb(26, 26, 26);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: .3s;
 }
