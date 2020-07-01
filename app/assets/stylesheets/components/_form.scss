@@ -1,4 +1,5 @@
-#login-h2 {
+#login-h2,
+#edit-h2 {
   font-family: 'Work Sans';
   font-weight: 600;
 }
@@ -6,7 +7,9 @@
 // labels
 .user_email label,
 .user_password label,
-.form-check label {
+.form-check label,
+.form-group label,
+.form-group legend {
   color: $dark-gray;
 }
 
@@ -19,17 +22,9 @@
 }
 
 .form-links:hover {
-  color: rgb(146, 146, 146);
+  color: $orange;
 }
 
-// button
-.form-actions .btn {
-  width: 100%;
-  color: white;
-  background-color: $orange;
-  transition: .3s;
-}
-
-.form-actions .btn:hover {
-  background-color: #f0ac4d;
+.unhappy {
+  font-size: 14px;
 }

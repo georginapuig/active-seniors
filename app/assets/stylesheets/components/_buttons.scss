@@ -24,3 +24,15 @@
   font-size: 15px;
   padding: 10px 15px; 
 }
+
+// form button
+.form-actions .btn {
+  width: 100%;
+  color: white;
+  background-color: $orange;
+  transition: .3s;
+}
+
+.form-actions .btn:hover {
+  background-color: #f0ac4d;
+}
