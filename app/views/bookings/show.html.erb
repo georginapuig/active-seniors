@@ -1,5 +1,5 @@
-<h1>Booking confirmation</h1>
+<h1>Booking</h1>
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+<%= simple_form_for [ @booking, @message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message " %>
 <% end %>
