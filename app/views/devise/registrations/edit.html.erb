@@ -1,5 +1,5 @@
 <div class="container pt-5 col-md-4 form">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2 id="edit-h2" class="pb-2">Edit <%= resource_name.to_s.humanize %></h2>
 
   <!-- form -->
   <div>
@@ -41,13 +41,11 @@
   </div>
 
   <!-- links -->
-  <div>
-    <h3>Cancel my account</h3>
+  <div class="pt-4 pb-5">
+    <div class="d-flex justify-content-between">
+      <%= link_to "Back", :back, class: "form-links" %>
 
-    <div>
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
+      <p class="unhappy">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "form-links pl-1" %></p>
     </div>
   </div>
 </div>

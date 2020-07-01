@@ -7,7 +7,9 @@
 // labels
 .user_email label,
 .user_password label,
-.form-check label {
+.form-check label,
+.form-group label,
+.form-group legend {
   color: $dark-gray;
 }
 
@@ -20,5 +22,9 @@
 }
 
 .form-links:hover {
-  color: rgb(146, 146, 146);
+  color: $orange;
+}
+
+.unhappy {
+  font-size: 14px;
 }
