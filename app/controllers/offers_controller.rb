@@ -52,9 +52,6 @@ class OffersController < ApplicationController
   end
 
   def show
-    # @chatroom = Chatroom.find(params[:id])
-    # @message = Message.new
-
     @review = Review.new
 
     if params[:lat] && params[:lng]
