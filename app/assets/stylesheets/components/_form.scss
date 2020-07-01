@@ -1,4 +1,5 @@
-#login-h2 {
+#login-h2,
+#edit-h2 {
   font-family: 'Work Sans';
   font-weight: 600;
 }
@@ -20,16 +21,4 @@
 
 .form-links:hover {
   color: rgb(146, 146, 146);
-}
-
-// button
-.form-actions .btn {
-  width: 100%;
-  color: white;
-  background-color: $orange;
-  transition: .3s;
-}
-
-.form-actions .btn:hover {
-  background-color: #f0ac4d;
 }
