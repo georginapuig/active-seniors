@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :messages
   has_many :chatrooms, through: :messages
+  has_many :checkouts
 
   private
 
