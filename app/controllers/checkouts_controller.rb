@@ -21,7 +21,7 @@ class CheckoutsController < ApplicationController
         currency: 'usd',
         quantity: 1
       }],
-      success_url: payments_success_url,
+      success_url: payments_success_url, # booking_url(@booking)
       cancel_url:  payments_cancel_url
     )
 
