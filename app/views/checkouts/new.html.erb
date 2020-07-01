@@ -51,8 +51,8 @@
       </div>
     </div>
     <br>
-    <%=   simple_form_for([@booking, @checkout]) do |f| %>
-      <%= f.submit "Proceed to payment" %>
+    <%= simple_form_for([@booking, @checkout]) do |f| %>
+      <%= f.submit "Proceed to payment", class: "btn btn-show" %>
     <% end %>
 </div>
 
