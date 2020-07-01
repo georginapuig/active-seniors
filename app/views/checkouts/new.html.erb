@@ -51,7 +51,7 @@
       </div>
     </div>
     <br>
-    <%= form_tag checkout_path do %>
+    <%= form_tag payment_path do %>
       <%= hidden_field_tag 'offer_id', @offer.id %>
       <%= submit_tag 'Proceed to Payment', class: 'btn btn-show' %>
     <% end %>
