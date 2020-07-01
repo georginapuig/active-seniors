@@ -9,17 +9,17 @@
 
       <input type="text" name="location" id="header-text-input" placeholder="Enter location">
       
-      <select name="category" id="header-text-input">
+      <select name="category" id="header-text-input1">
         <option value="">Select category</option>
         <% Category.categories.each do |category| %>
           <option value="<%=category.id%>"><%=category.name%></option> 
         <% end %>
       </select>
       
-      <select name="subcategory" id="header-text-input">
+      <select name="subcategory" id="header-text-input2">
         <option value="">Select subcategory</option>
         <% Category.subcategories.each do |subcategory| %>
-          <option value="<%=subcategory.id%>"><%=subcategory.name%></option> 
+          <option value="<%=subcategory.id%>" parent_id="<%=subcategory.parent_id%>"><%=subcategory.name%></option> 
         <% end %>
       </select>
       
@@ -124,4 +124,4 @@
     <% end %>
   </div>
 </div>
-  
+<%= javascript_pack_tag 'dynamic_subcategories', defer: true %>
