@@ -1,15 +1,47 @@
-<div class="container">
-  <div class="row py-4">
+<div class="container pt-5 pb-4 col-md-3 form">
+    <h2 id="payment-h2" class="text-center pb-4">Payment options</h2>
+    
+    
+      <!-- mastercard -->
+      <div class="card-payment mb-4 d-flex">
+        <%= image_tag "mastercard.svg" %>
+        <div class="card-payment-infos">
+          <p>Mastercard</p>
+        </div>
+      </div>
 
-    <div class="col">
-      <h1>Payment options</h1>
+      <!-- visacard -->
+      <div class="card-payment mb-4 d-flex">
+        <%= image_tag "visa.svg" %>
+        <div class="card-payment-infos">
+          <p>Visacard</p>
+        </div>
+      </div>
 
+      <!-- american express -->
+      <div class="card-payment mb-4">
+        <%= image_tag "american-express.svg" %>
+        <div class="card-payment-infos">
+          <p>American Express</p>
+        </div>
+      </div>
 
+      <!-- G pay -->
+      <div class="card-payment">
+        <%= image_tag "google-pay.svg" %>
+        <div class="card-payment-infos">
+          <p>G pay</p>
+        </div>
+      </div>
+   
 
-      <button id="pay" class="btn btn-show">Pay with card</button>
+    <!-- button -->
+    <div class="form-actions pt-4">
+      <button id="pay" class="btn">Proceed to payment</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
+        
         paymentButton.addEventListener('click', () => {
           const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
           stripe.redirectToCheckout({
@@ -18,5 +50,4 @@
         });
       </script>
     </div>
-  </div>
 </div>
