@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+
   has_many :offers
 
   def self.categories

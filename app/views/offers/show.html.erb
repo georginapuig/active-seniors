@@ -4,7 +4,7 @@
   <div class="d-flex  card-senior p-5">
     <!-- left -->
     <div class="left">
-      <img src=<%= @offer.user.photo %> />
+      <%=  cl_image_tag @offer.user.photo.key, width: 700, height: 700, crop: :fill %>
       <div class="card-bottom-left">
         <!-- name -->
         <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
@@ -88,7 +88,7 @@
             </div>
           </div>
           <div>
-            <p id="price-p">$<%= @offer.price %>/h</p>
+            <p id="price-p"><%= humanized_money_with_symbol(@offer.price) %>/h</p>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
           <!-- top card -->
           <div class="d-flex top-card">
             <!-- top left -->
-            <img src=<%= offer.user.photo %> />
+            <%=  cl_image_tag offer.user.photo.key, width: 148, height: 148, crop: :fill %>
             <!-- top right -->
             <div class="top-text-card">
               <!-- <%= link_to offer.category.name, offer_path(offer) %> -->
@@ -149,7 +149,7 @@
             </div>
             <!-- bottom right -->
             <div class="card-bottom-right">
-              <p>$<%= offer.price %>/h</p>
+              <p><%= humanized_money_with_symbol(@offer.price) %>/h</p>
             </div>
           </div>
         </div>

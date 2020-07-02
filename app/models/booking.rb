@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+
   belongs_to :user
   belongs_to :offer
 
@@ -26,6 +27,14 @@ class Booking < ApplicationRecord
 
   def grand_total_in_cents
     (grand_total * 100).to_i
+  end
+
+  def display_name
+    "Booking #{offer.user.first_name} for #{hours_amount} hours"
+  end
+
+  def hours_amount
+    (end_date - start_date).to_i
   end
   # validates :end_date_after_start_date
 

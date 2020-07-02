@@ -29,7 +29,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 import { initBookingCable } from '../channels/booking_channel';
 import { initDateTime } from '../plugins/init_datetime';
 // import { initGeolocation } from '../plugins/init_geolocation.js';
-
+import flatpickr from "flatpickr";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -39,6 +39,20 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   initStarRating();
   initBookingCable();
+  flatpickr(".datepicker", {});
+
+
+  flatpickr(".datepicker", {
+    altInput: true
+  });
+
+  flatpickr(".datepicker", {
+    allowInput: true
+  });
+
+  flatpickr(".datepicker", {
+    enableTime: true
+  });
   // initDateTime();
   // initGeolocation();
 });

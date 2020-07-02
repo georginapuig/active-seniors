@@ -48,27 +48,31 @@ prices = [20, 30, 50, 35, 40]
 description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
 female_pics.each do |picture|
-  user_2 = User.create!(
+  user_2 = User.new(
     first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456',
-    photo: picture,
     age: rand(55..68),
     gender: "Female"
   )
+  file = open(picture)
+  user_2.photo.attach(io: file, filename: "#{user_2.first_name}.jpg")
+  user_2.save!
 end
 
 men_pics.each do |picture|
-  user_1 = User.create!(
+  user_1 = User.new(
     first_name: Faker::Name.male_first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456',
-    photo: picture,
     age: rand(55..68),
     gender: "Male"
   )
+  file = open(picture)
+  user_1.photo.attach(io: file, filename: "#{user_1.first_name}.jpg")
+  user_1.save!
 end
 
 category_1 = Category.create!(name: "Home & Kids")

@@ -8,21 +8,21 @@
     <form class="form-header text-left" action="/offers">
 
       <input type="text" name="location" id="header-text-input" placeholder="Enter location">
-      
+
       <select name="category" id="header-text-input1">
         <option value="">Select category</option>
         <% Category.categories.each do |category| %>
-          <option value="<%=category.id%>"><%=category.name%></option> 
+          <option value="<%=category.id%>"><%=category.name%></option>
         <% end %>
       </select>
-      
+
       <select name="subcategory" id="header-text-input2">
         <option value="">Select subcategory</option>
         <% Category.subcategories.each do |subcategory| %>
-          <option value="<%=subcategory.id%>" parent_id="<%=subcategory.parent_id%>"><%=subcategory.name%></option> 
+          <option value="<%=subcategory.id%>" parent_id="<%=subcategory.parent_id%>"><%=subcategory.name%></option>
         <% end %>
       </select>
-      
+
       <input type="submit" value="Search" id="header-submit-input">
     </form>
   </div>
@@ -90,7 +90,7 @@
           <!-- top card -->
           <div class="d-flex top-card">
             <!-- top left -->
-            <img src=<%= offer.user.photo %> />
+           <%=  cl_image_tag offer.user.photo.key, width: 148, height: 148, crop: :fill %>
             <!-- top right -->
             <div class="top-text-card">
               <!-- <%= link_to offer.category.name, offer_path(offer) %> -->
@@ -104,8 +104,8 @@
             <!-- bottom left -->
             <div class="card-bottom-left">
               <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
-              <p>Member since 
-                <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+              <p>Member since
+                <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
                 <%= rand(2015..2020) %>
               </p>
               <!-- <p>&#11088; 4.91 (15)</p> -->
@@ -116,7 +116,7 @@
             </div>
             <!-- bottom right -->
             <div class="card-bottom-right">
-              <p>$<%= offer.price %>/h</p>
+              <p><%= humanized_money_with_symbol(offer.price) %>/h</p>
             </div>
           </div>
         </div>
