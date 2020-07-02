@@ -11,6 +11,8 @@
 
       <%= f.input :last_name, required: true, autofocus: true %>
 
+      <%= f.input :nickname, required: true, autofocus: true %>
+
       <%= f.input :age, required: true, collection: 18..68, autofocus: true %>
 
       <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male'], ['2', 'other']], label_method: :second, value_method: :first %>
