@@ -34,7 +34,11 @@ class Booking < ApplicationRecord
   end
 
   def hours_amount
-    (end_date - start_date).to_i
+    (end_date - start_date).to_i / 3600
+  end
+
+  def display_image
+    offer.user.photo
   end
   # validates :end_date_after_start_date
 
