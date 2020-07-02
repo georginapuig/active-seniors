@@ -88,27 +88,31 @@ I have a Diploma of Science, and have current Working With Children's Check.
 I look forward to helping your kid find his or her passion within Science!"
 ]
 female_pics.each do |picture|
-  user_2 = User.create!(
+  user_2 = User.new(
     first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456',
-    photo: picture,
     age: rand(55..68),
     gender: "Female"
   )
+  file = open(picture)
+  user_2.photo.attach(io: file, filename: "#{user_2.first_name}.jpg")
+  user_2.save!
 end
 
 men_pics.each do |picture|
-  user_1 = User.create!(
+  user_1 = User.new(
     first_name: Faker::Name.male_first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456',
-    photo: picture,
     age: rand(55..68),
     gender: "Male"
   )
+  file = open(picture)
+  user_1.photo.attach(io: file, filename: "#{user_1.first_name}.jpg")
+  user_1.save!
 end
 
 category_1 = Category.create!(name: "Home & Kids")

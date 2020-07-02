@@ -1,5 +1,5 @@
 class Offer < ApplicationRecord
-   monetize :price_cents
+  monetize :price_cents
 
   include PgSearch::Model
   pg_search_scope :search_by_location,

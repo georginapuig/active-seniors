@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :messages
   has_many :checkouts
 
+  has_one_attached :photo
+
   private
 
   # delivering the email from model (on callback)

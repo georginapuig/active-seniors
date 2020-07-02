@@ -11,7 +11,7 @@ class CheckoutsController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name:   @booking.id,
+        name:   @booking.display_name,
         images: [@booking.offer.user.photo],
         amount: @booking.grand_total_in_cents,
         currency: 'usd',

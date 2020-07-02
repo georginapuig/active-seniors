@@ -12,7 +12,7 @@
             <!-- top card -->
             <div class="d-flex top-card">
               <!-- top left -->
-              <img src=<%= offer.user.photo %> />
+             <%=  cl_image_tag offer.user.photo.key, width: 148, height: 148, crop: :fill %>
               <!-- top right -->
               <div class="top-text-card">
                 <!-- <%= link_to offer.category.name, offer_path(offer) %> -->
@@ -26,18 +26,18 @@
               <!-- bottom left -->
               <div class="card-bottom-left">
                 <p><%= offer.user.first_name %>, <%= offer.user.age %></p>
-                <p>Member since 
-                  <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %> 
+                <p>Member since
+                  <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
                   <%= rand(2015..2020) %>
                 </p>
                 <p>
                   <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
                   <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
-                </p>              
+                </p>
               </div>
               <!-- bottom right -->
               <div class="card-bottom-right">
-                <p>$<%= offer.price %>/h</p>
+                <p><%= humanized_money_with_symbol(offer.price) %>/h</p>
               </div>
             </div>
           </div>

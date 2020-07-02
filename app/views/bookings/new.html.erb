@@ -2,7 +2,7 @@
 
   <div class="card-advertisement d-flex flex-column mb-5">
     <div class="d-flex top-card">
-      <img src=<%= @offer.user.photo %> />
+       <%=  cl_image_tag @offer.user.photo.key, width: 148, height: 148, crop: :fill %>
         <div class="top-text-card">
           <h2><%= @offer.category.name %></h2>
           <p><%= @offer.subcategory.name %></p>
@@ -23,17 +23,21 @@
           </p>
       </div>
       <div class="card-bottom-right">
-         <p>$<%= @offer.price %>/h</p>
+         <p><%= humanized_money_with_symbol(@offer.price) %>/h</p>
       </div>
     </div>
 </div>
 
-<div class="container d-flex justify-content-center mb-5">
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>Please choose time</h2>
+
     <%= simple_form_for([@offer, @booking]) do |f| %>
-        <%= f.input :start_date, label: "From:" %>
-        <%= f.input :end_date, label: "To:" %>
-        <%= f.button :submit, class: "btn btn-show" %>
+      <%= f.input :start_date, as: :string, required: false, label: "From:", input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, label: "To:", input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Book now", class: "btn btn-show" %>
     <% end %>
+  </div>
 </div>
 
 
