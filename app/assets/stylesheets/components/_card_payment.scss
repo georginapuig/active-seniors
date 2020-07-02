@@ -1,0 +1,47 @@
+.card-payment {
+  overflow: hidden;
+  height: 80px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: .3s;
+}
+
+.card-payment img {
+  height: 70%;
+  width: 80px;
+  padding-left: 15px;
+  padding-right: 5px;
+  background-position: center;
+}
+
+.card-payment h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-payment p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-payment .card-payment-infos {
+  padding: 16px;
+}
+
+.card-payment-infos {
+  height: 100%;
+  position: relative;
+  top: 54%;
+  transform: translateY(-50%);
+}
+
+.card-payment:hover {
+  transform: scale(1.03);
+}
