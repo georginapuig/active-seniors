@@ -1,0 +1,5 @@
+meta_product_name: "Active Seniors"
+meta_title: "Connect active, experienced and talented seniors with jobs they like"
+meta_description: "Platform providing opportunities for seniors to be socially active, earn money, do what they like best, share their skills and talents"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
