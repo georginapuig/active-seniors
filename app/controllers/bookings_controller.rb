@@ -9,6 +9,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    @message = Message.new
+    @booking.user = current_user
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.offer = @offer

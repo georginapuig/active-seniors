@@ -21,10 +21,10 @@ class CheckoutsController < ApplicationController
         currency: 'usd',
         quantity: 1
       }],
-      success_url: payments_success_url,
+      success_url: booking_url(@booking), # payments_success_url
       cancel_url:  payments_cancel_url
     )
-
+    
     @checkout.update(checkout_session_id: session.id)
     redirect_to new_booking_checkout_payment_path(@booking, @checkout)
   end
