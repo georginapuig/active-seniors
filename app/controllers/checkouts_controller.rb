@@ -13,7 +13,7 @@ class CheckoutsController < ApplicationController
       line_items: [{
         name:   @booking.id,
         images: [@booking.offer.user.photo],
-        amount: @booking.grand_total,
+        amount: @booking.grand_total_in_cents,
         currency: 'usd',
         quantity: 1
       }],

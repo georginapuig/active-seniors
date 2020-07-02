@@ -24,6 +24,9 @@ class Booking < ApplicationRecord
     subtotal + vat
   end
 
+  def grand_total_in_cents
+    (grand_total * 100).to_i
+  end
   # validates :end_date_after_start_date
 
   # private
