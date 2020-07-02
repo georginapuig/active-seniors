@@ -20,26 +20,8 @@
 }
 
 // inputs
-#header-text-input {
-  padding-left: 15px;
-  width: 200px;
-  height: 80px;
-  font-family: "Work Sans", "Helvetica", "sans-serif";
-  font-weight: 600;
-  border: none;
-  border-radius: 4px;
-}
-
-#header-text-input1 {
-  padding-left: 15px;
-  width: 200px;
-  height: 80px;
-  font-family: "Work Sans", "Helvetica", "sans-serif";
-  font-weight: 600;
-  border: none;
-  border-radius: 4px;
-}
-
+#header-text-input,
+#header-text-input1,
 #header-text-input2 {
   padding-left: 15px;
   width: 200px;
@@ -50,8 +32,14 @@
   border-radius: 4px;
 }
 
-::placeholder {
-  color: rgba(201, 201, 201, .9);
+#header-text-input1,
+#header-text-input2 {
+  background-color: white;
+}
+
+::placeholder,
+select {
+  color: rgba(145, 145, 145, 0.8);
   font-size: 16px;
 }
 

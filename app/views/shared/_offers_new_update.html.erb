@@ -1,5 +1,5 @@
-<div class="container pt-5 col-md-5 form">
-  <h2 class="text-center pb-3">Information about your offer</h2>
+<div class="container pt-5 pb-5 col-md-4 form">
+  <h2 class="text-center pb-3" id="new-offer-h2">Information about your offer</h2>
 
   <%= simple_form_for @offer do |f| %>
     <%= f.input :category, collection: Category.categories %>
