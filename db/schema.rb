@@ -76,13 +76,12 @@ ActiveRecord::Schema.define(version: 2020_07_02_051638) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.bigint "booking_id", null: false
     t.string "content"
     t.index ["booking_id"], name: "index_messages_on_booking_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -118,7 +117,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_051638) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.string "first_name"
     t.string "last_name"
     t.string "photo"
@@ -136,7 +135,6 @@ ActiveRecord::Schema.define(version: 2020_07_02_051638) do
   add_foreign_key "checkouts", "offers"
   add_foreign_key "checkouts", "users"
   add_foreign_key "messages", "bookings"
-  add_foreign_key "messages", "users"
   add_foreign_key "offers", "categories"
   add_foreign_key "offers", "categories", column: "subcategory_id"
   add_foreign_key "offers", "users"
