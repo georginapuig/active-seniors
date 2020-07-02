@@ -12,7 +12,7 @@ class CheckoutsController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         name:   @booking.display_name,
-        images: [@booking.offer.user.photo],
+        images: [@booking.display_image.service_url],
         amount: @booking.grand_total_in_cents,
         currency: 'usd',
         quantity: 1
