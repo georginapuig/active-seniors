@@ -1,5 +1,21 @@
 <h1>Booking</h1>
 
+<h1><%= @booking.user.first_name %></h1>
+
+<!-- messages display -->
+<div id="messages" data-booking-id="<%= @booking.id %>">
+  <% @booking.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+      <i class="author">
+        <span><%= message.user.nickname %></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.content %></p>
+    </div>
+  <% end %>
+</div>
+
+<!-- input message -->
 <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message " %>
+  <%= f.input :content, label: false %>
 <% end %>
