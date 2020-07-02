@@ -26,7 +26,7 @@ require("channels");
 import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { initStarRating } from '../plugins/init_star_rating';
-import { initChatroomCable } from '../channels/booking_channel';
+import { initBookingCable } from '../channels/booking_channel';
 import { initDateTime } from '../plugins/init_datetime';
 // import { initGeolocation } from '../plugins/init_geolocation.js';
 
@@ -38,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initAutocomplete();
   initStarRating();
-  initChatroomCable();
+  initBookingCable();
   // initDateTime();
   // initGeolocation();
 });

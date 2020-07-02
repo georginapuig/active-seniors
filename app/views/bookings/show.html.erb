@@ -5,7 +5,7 @@
 <!-- messages display -->
 <div id="messages" data-booking-id="<%= @booking.id %>">
   <% @booking.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
+    <%= render 'messages/message', message: message %>  
   <% end %>
 </div>
 
