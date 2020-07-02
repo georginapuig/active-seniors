@@ -1,7 +1,6 @@
 .card-senior {
   width: 1050px;
   height: auto;
-  margin-bottom: 40px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -61,6 +60,15 @@
   font-size: 16px;
 }
 
+.rating {
+  transition: .3s;
+}
+
+.rating:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 // right
 #category-h2 {
   font-family: "Work Sans";
@@ -88,6 +96,12 @@
   padding-top: 30px;
 }
 
+#price-p {
+  font-size: 22px;
+  font-weight: 600;
+  color: #5e5c5c;
+}
+
 .availability p:nth-of-type(1) {
   padding-top: 60px;
 }
@@ -106,7 +120,7 @@
 }
 
 .location {
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 .price p:nth-of-type(2) {

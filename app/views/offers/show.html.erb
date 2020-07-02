@@ -6,15 +6,61 @@
     <div class="left">
       <img src=<%= @offer.user.photo %> />
       <div class="card-bottom-left">
+        <!-- name -->
         <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
+        <!-- member since -->
         <p id="member-since">Member since
           <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
           <%= rand(2015..2020) %>
         </p>
-        <p>
-          <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
-          <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
-        </p>
+        <!-- reviews button -->
+        <div class="mt-3">
+          <!-- rating -->
+          <p class="rating" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
+            <%= rand(3.0..5).round(2) %> (<%= rand(1..20) %>)
+          </p>
+          <!-- modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Reviews</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <!-- form review -->
+                    <div>
+                      <%= simple_form_for [ @offer, @review ] do |f| %>
+                        <%= f.input :rating, collection: 1..5 %>
+                        <%= f.input :feedback, as: :text, label: :Review %>
+                        <%= f.button :submit, "Submit a review", class: "form-actions btn-submit-review mb-3" %>
+                      <% end %>
+                    </div>
+                    <!-- users reviews -->
+                    <div>
+                      <% if @offer.reviews.blank? %>
+                        <p style="color: #818080;">
+                          Be the first to leave a review for <%= @offer.user.first_name %>
+                        </p>
+                      <% else %>
+                        <% @offer.reviews.each do |review| %>
+                          <div class="mt-4 mb-4">
+                            <p class="mb-0">
+                              <%= content_tag( :i, '', :class=>'fa fa-star', :style=>'color: #E7A142') * review.rating %>
+                            </p>
+                            <p style="color: #3a3a3a;"><%= review.feedback %></p>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="about">
         <p>About</p>
@@ -33,7 +79,18 @@
       </div>
       <div class="price">
         <p>Price</p>
-        <p>$<%= @offer.price %>/h</p>
+        <div class="mt-3 d-flex justify-content-end">
+          <!-- booking button -->
+          <div class="mr-3">
+            <!-- button -->
+            <div class="btn btn-show" >
+                <%= link_to "Book now", new_offer_booking_path(@offer), class: "text-white" %>
+            </div>
+          </div>
+          <div>
+            <p id="price-p">$<%= @offer.price %>/h</p>
+          </div>
+        </div>
       </div>
       <div class="location">
         <p>Location</p>
@@ -50,103 +107,6 @@
       <% end %>
     </div>
 
-  </div>
-
-  <!-- buttons -->
-  <div class="d-flex justify-content-center mb-2">
-    <!-- booking button -->
-    <div class="mr-4">
-      <!-- button -->
-    <div class="btn btn-show" >
-        <%= link_to "Book now", new_offer_booking_path(@offer), class: "text-white" %>
-        <!-- modal -->
-    </div>
-  </div>
-
-    <!-- reviews button -->
-    <div class="mr-4">
-      <!-- button -->
-      <button type="button" class="btn btn-show" data-toggle="modal" data-target="#exampleModal">
-        Read Reviews
-      </button>
-       <!-- modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Reviews</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <!-- form review -->
-                <div>
-                  <%= simple_form_for [ @offer, @review ] do |f| %>
-                    <%= f.input :rating, collection: 1..5 %>
-                    <%= f.input :feedback, as: :text, label: :Review %>
-                    <%= f.button :submit, "Submit a review", class: "form-actions btn-submit-review mb-3" %>
-                  <% end %>
-                </div>
-                <!-- users reviews -->
-                <div>
-                  <% if @offer.reviews.blank? %>
-                    <p style="color: #818080;">
-                      Be the first to leave a review for <%= @offer.user.first_name %>
-                    </p>
-                  <% else %>
-                    <% @offer.reviews.each do |review| %>
-                      <div class="mt-4 mb-4">
-                        <p class="mb-0">
-                          <%= content_tag( :i, '', :class=>'fa fa-star', :style=>'color: #E7A142') * review.rating %>
-                        </p>
-                        <p style="color: #3a3a3a;"><%= review.feedback %></p>
-                      </div>
-                    <% end %>
-                  <% end %>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- messages button -->
-    <div>
-      <!-- button -->
-      <button type="button" class="btn btn-show" data-toggle="modal" data-target="#exampleModal1" data-whatever="Active Senior">
-        Send a Message
-      </button>
-      <!-- modal -->
-      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Recipient:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
