@@ -2,7 +2,9 @@
   <!-- booking confirmed -->
   <div class="booking-confirmed mr-5">
     <!-- <h2 id="booking-confirmed-h2">Booking confirmed</h2> -->
-    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <div class="text-center">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>
+    </div>
     <h3 
       style="font-weight: 500; font-size: 22px;" 
       id="user-h3"
@@ -18,26 +20,30 @@
       <h3 
         style="font-weight: 500; font-size: 22px;" 
         id="user-h3"
-        class="text-center pb-4">
+        class="text-center pt-2 pb-3">
           Send a message to <%= @offer.user.first_name %>
       </h3>
     </div>
 
     <!-- messages display -->
-    <div class="pl-5" id="messages" data-booking-id="<%= @booking.id %>">
-      <% @booking.messages.each do |message| %>
+    <div class="pl-4 pr-4" id="messages" data-booking-id="<%= @booking.id %>">
+      <div class="messages-display">
+        <% @booking.messages.each do |message| %>
         <div class="d-flex pb-2">
           <div class="pr-3">
-            <%=  cl_image_tag @offer.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
+            <%=  cl_image_tag message.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
           </div>
           <%= render 'messages/message', message: message %>  
         </div>
       <% end %>
+      </div>
      
       <!-- input message -->
-      <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, class: "input-message" %>
-      <% end %>
+      <div class="input-message">
+        <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, class: "input-message" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
