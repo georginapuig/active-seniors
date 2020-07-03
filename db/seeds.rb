@@ -83,6 +83,19 @@ men_pics.each do |picture|
   user_1.save!
 end
 
+
+  user_3 = User.new(
+    first_name: "James",
+    last_name: "Smith",
+    email: "james.smith@gmail.com",
+    password: '123456',
+    age: rand(55..68),
+    gender: "Male"
+  )
+  file = open('https://res.cloudinary.com/dbjx0xfid/image/upload/v1593004136/Seniors/m1.jpg')
+  user_3.photo.attach(io: file, filename: "#{user_3.first_name}.jpg")
+  user_3.save!
+
 category_1 = Category.create!(name: "Home & Kids")
 category_2 = Category.create!(name: "Languages")
 category_3 = Category.create!(name: "School")
@@ -179,6 +192,16 @@ User.all.each do |user|
     price: prices.sample,
   )
 end
+
+  offer = Offer.create!(
+    category_id: category_3.id,
+    subcategory_id: category_3.subcategories.sample.id,
+    user_id: user_3.id,
+    description: description,
+    location: "Birmingham",
+    price: 40
+    )
+
 
 puts "Successfully finished creating the seeds!"
 
