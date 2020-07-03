@@ -1,5 +1,8 @@
-<div class="container">
-  <h2>Checkout</h2>
+<div class="checkout-container pt-4">
+  <h2 id="checkout-h2" class="pb-3">Checkout</h2>
+
+  <!-- table -->
+  <div class="pb-4">
     <div class="divTableHeading">
       <div class="divTableRow">
         <div class="divTableHead">Order <%= rand(56789..98765) %></div>
@@ -50,9 +53,13 @@
         <div class="divTableCell"><%= humanized_money_with_symbol(@booking.grand_total) %></div>
       </div>
     </div>
-    <br>
+  </div>
+
+  <!-- button -->
+  <div class="form-actions">
     <%= simple_form_for([@booking, @checkout]) do |f| %>
-      <%= f.submit "Proceed to payment", class: "btn btn-show" %>
+      <%= f.submit "Proceed to payment", class: "btn" %>
     <% end %>
+  </div>
 </div>
 
