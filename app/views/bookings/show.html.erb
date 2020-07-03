@@ -1,16 +1,37 @@
 <div class="d-flex justify-content-center pt-5">
   <!-- booking confirmed -->
   <div class="booking-confirmed mr-5">
-    <!-- <h2 id="booking-confirmed-h2">Booking confirmed</h2> -->
+    <!-- check i -->
     <div class="text-center">
       <i class="fa fa-check-circle" aria-hidden="true"></i>
     </div>
+    <!-- your booking is confirmed -->
     <h3 
       style="font-weight: 500; font-size: 22px;" 
       id="user-h3"
       class="text-center pb-4">
         <%= @booking.user.first_name %>, your booking is confirmed
     </h3>
+    <!-- card -->
+    <div class="cards">
+      <div id="card-bookings-show-offer" class="card-advertisement d-flex flex-column justify-content-between p-4">
+        <!-- top -->
+        <div id="top-card-offer" class="d-flex top-card">
+          <%=  cl_image_tag @offer.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
+          <div class="top-text-card">
+            <h2><%= @offer.category.name %></h2>
+            <p><%= @offer.subcategory.name %></p>
+            <sub><%= @offer.location %></sub>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p>Offer id: <%= @booking.offer_id %></p>
+      <p>Start date: <%= @booking.start_date %></p>
+      <p>End date:Psch <%= @booking.end_date %></p>
+    </div>
   </div>
 
   <!-- message -->
