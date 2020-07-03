@@ -8,9 +8,13 @@
 
 require "faker"
 
-Offer.destroy_all if Rails .env.development?
-Category.destroy_all if Rails .env.development?
-User.destroy_all if Rails .env.development?
+Message.destroy_all
+Booking.destroy_all
+Offer.destroy_all
+Category.destroy_all
+User.destroy_all
+
+
 
 puts "Creating seeds...."
 
