@@ -6,8 +6,8 @@ class OffersController < ApplicationController
     categ = params[:category]
     subcateg = params[:subcategory]
     category = params[:q]
-    result = Offer.search_by_location(params[:location])
     if location.present?
+      result = Offer.search_by_location(params[:location])
       if categ.present?
         if subcateg.present?
           @offers = result.where(subcategory_id: subcateg.to_i)
@@ -15,7 +15,12 @@ class OffersController < ApplicationController
           @offers = result.where(category_id: categ.to_i)
         end
       else
-        @offers = result
+        #@offers = result
+        if subcateg.present?
+          @offers = result.where(subcategory_id: subcateg.to_i)
+        else
+          @offers = result
+        end
       end
       @markers = @offers.map do |offer|
         {
@@ -38,7 +43,21 @@ class OffersController < ApplicationController
         }
       end
     else
-      @offers = Offer.all.geocoded.shuffle
+      #@offers = Offer.all.geocoded.shuffle
+      if categ.present?
+        if subcateg.present?
+          @offers = Offer.where(subcategory_id: subcateg.to_i)
+        else
+          @offers = Offer.where(category_id: categ.to_i)
+        end
+      else
+        #@offers = result
+        if subcateg.present?
+          @offers = Offer.where(subcategory_id: subcateg.to_i)
+        else
+          @offers = Offer.all.geocoded.shuffle
+        end
+      end
 
       @markers = @offers.map do |offer|
       {
