@@ -2,7 +2,7 @@
 .messages {
   border: 1px solid red;
   width: 500px;
-  height: 400px;
+  height: auto;
 }
 
 // check i
@@ -10,5 +10,32 @@
   color: rgb(81, 211, 146);
   font-size: 60px;
   margin: 0 225px;
-  padding-bottom: 15px;
+  padding-bottom: 18px;
+}
+
+#card-bookings-show-offer {
+  margin: 0 auto;
+  height: auto;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#messages img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #C4C4C4;
+}
+
+.input-message {
+  width: 350px;
+}
+
+.message_content input {
+  width: 350px;
+}
+
+#top-messages-info h3 {
+  margin: 0 auto;
 }
