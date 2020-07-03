@@ -2,59 +2,48 @@
   <!-- booking confirmed -->
   <div class="booking-confirmed mr-5">
     <!-- <h2 id="booking-confirmed-h2">Booking confirmed</h2> -->
-    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <div class="text-center">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>
+    </div>
     <h3 
       style="font-weight: 500; font-size: 22px;" 
       id="user-h3"
-      class="text-center">
+      class="text-center pb-4">
         <%= @booking.user.first_name %>, your booking is confirmed
     </h3>
-
-    <!-- card -->
-    <div class="cards ml-5">
-      <div id="card-bookings-offer" class="card-advertisement d-flex flex-column justify-content-between p-4">
-        <!-- top -->
-        <div id="top-card-offer" class="d-flex top-card">
-          <%=  cl_image_tag @offer.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
-          <div class="top-text-card">
-            <h2><%= @offer.category.name %></h2>
-            <p><%= @offer.subcategory.name %></p>
-            <sub><%= @offer.location %></sub>
-          </div>
-        </div>
-        <!-- bottom -->
-        <div class="d-flex bottom-card">
-          <div id="card-bottom-left-offer" class="card-bottom-left justify-content-end">
-            <p><%= @offer.user.first_name %>, <%= @offer.user.age %></p>
-            <p>Member since
-              <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
-              <%= rand(2015..2020) %>
-            </p>
-            <p>
-              <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
-                <%= rand(4.0..5).round(2) %> (<%= rand(1..20) %>)
-            </p>
-          </div>
-          <div class="card-bottom-right">
-            <p><%= humanized_money_with_symbol(@offer.price) %>/h</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- message -->
   <div class="messages">
-    <!-- messages display -->
-    <div id="messages" data-booking-id="<%= @booking.id %>">
-      <% @booking.messages.each do |message| %>
-        <%= render 'messages/message', message: message %>  
-      <% end %>
+    <!-- top -->
+    <div class="d-flex justify-content-between" id="top-messages-info">
+      <h3 
+        style="font-weight: 500; font-size: 22px;" 
+        id="user-h3"
+        class="text-center pt-2 pb-3">
+          Send a message to <%= @offer.user.first_name %>
+      </h3>
     </div>
 
-    <!-- input message -->
-    <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false %>
-    <% end %>
+    <!-- messages display -->
+    <div class="pl-4 pr-4" id="messages" data-booking-id="<%= @booking.id %>">
+      <div class="messages-display">
+        <% @booking.messages.each do |message| %>
+        <div class="d-flex pb-2">
+          <div class="pr-3">
+            <%=  cl_image_tag message.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
+          </div>
+          <%= render 'messages/message', message: message %>  
+        </div>
+      <% end %>
+      </div>
+     
+      <!-- input message -->
+      <div class="input-message">
+        <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, class: "input-message" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
