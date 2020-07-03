@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @message = Message.new
-    @booking.user = current_user
     @offer = @booking.offer
   end
 
