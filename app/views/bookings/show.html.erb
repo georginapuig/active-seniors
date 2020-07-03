@@ -10,7 +10,37 @@
         <%= @booking.user.first_name %>, your booking is confirmed
     </h3>
 
-    
+    <!-- card -->
+    <div class="cards ml-5">
+      <div id="card-bookings-offer" class="card-advertisement d-flex flex-column justify-content-between p-4">
+        <!-- top -->
+        <div id="top-card-offer" class="d-flex top-card">
+          <%=  cl_image_tag @offer.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
+          <div class="top-text-card">
+            <h2><%= @offer.category.name %></h2>
+            <p><%= @offer.subcategory.name %></p>
+            <sub><%= @offer.location %></sub>
+          </div>
+        </div>
+        <!-- bottom -->
+        <div class="d-flex bottom-card">
+          <div id="card-bottom-left-offer" class="card-bottom-left justify-content-end">
+            <p><%= @offer.user.first_name %>, <%= @offer.user.age %></p>
+            <p>Member since
+              <%= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].sample %>
+              <%= rand(2015..2020) %>
+            </p>
+            <p>
+              <i class="fa fa-star" style="color: #E7A142;" aria-hidden="true"></i>
+                <%= rand(4.0..5).round(2) %> (<%= rand(1..20) %>)
+            </p>
+          </div>
+          <div class="card-bottom-right">
+            <p><%= humanized_money_with_symbol(@offer.price) %>/h</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- message -->

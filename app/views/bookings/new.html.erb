@@ -16,7 +16,7 @@
     <div id="card-bookings-offer" class="card-advertisement d-flex flex-column justify-content-between p-4">
       <!-- top -->
       <div id="top-card-offer" class="d-flex top-card">
-        <%=  cl_image_tag offer.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
+        <%=  cl_image_tag @offer.user.photo.key, :width => 148, :height => 148, :crop => :fill %>
         <div class="top-text-card">
           <h2><%= @offer.category.name %></h2>
           <p><%= @offer.subcategory.name %></p>
