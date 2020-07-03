@@ -78,17 +78,18 @@
         <p>Monday to Friday from 3:00PM to 7:00PM. Saturdays from 9:00AM until noon. Sundays every fortnight from 3:00pm to 6:00PM</p>
       </div>
       <div class="price">
-        <p>Price</p>
+        <!-- <p>Price</p> -->
+        <!-- offer price -->
+        <div>
+          <p id="price-p"><%= humanized_money_with_symbol(@offer.price) %>/h</p>
+        </div>
         <div class="mt-3 d-flex justify-content-end">
           <!-- booking button -->
-          <div class="mr-3">
+          <div>
             <!-- button -->
             <div class="btn btn-show" >
                 <%= link_to "Book now", new_offer_booking_path(@offer), class: "text-white" %>
             </div>
-          </div>
-          <div>
-            <p id="price-p"><%= humanized_money_with_symbol(@offer.price) %>/h</p>
           </div>
         </div>
       </div>
