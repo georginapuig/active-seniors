@@ -40,6 +40,10 @@ class Booking < ApplicationRecord
   def display_image
     offer.user.photo
   end
+
+  def created_by?(given_user)
+    user == given_user
+  end
   # validates :end_date_after_start_date
 
   # private

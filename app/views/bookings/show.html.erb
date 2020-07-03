@@ -42,7 +42,11 @@
         style="font-weight: 500; font-size: 22px;" 
         id="user-h3"
         class="text-center pt-2 pb-3">
+        <% if @booking.created_by?(current_user) %>
           Send a message to <%= @offer.user.first_name %>
+        <% else %>
+          Send a message to <%= @booking.user.first_name %>
+        <% end %>
       </h3>
     </div>
 
