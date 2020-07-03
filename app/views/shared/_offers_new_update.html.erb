@@ -1,9 +1,22 @@
 <div class="container pt-5 pb-5 col-md-4 form">
   <h2 class="text-center pb-3" id="new-offer-h2">Information about your offer</h2>
+  
+  <!-- [["Looking after kids", 381, {parent_id: 375}]] -->
+
+  <% collection_array = [] %>
+  <% Category.subcategories.each do |subcategory| %>
+    <% element = [] %>
+    <% class_obj = {} %>
+    <% element << subcategory.name %>
+    <% element << subcategory.id %>
+    <% class_obj[:parent_id] = subcategory.parent_id %>
+    <% element << class_obj %>
+    <% collection_array << element %>
+  <% end %>
 
   <%= simple_form_for @offer do |f| %>
     <%= f.input :category, collection: Category.categories %>
-    <%= f.input :subcategory, collection: Category.subcategories %>
+    <%= f.input :subcategory, collection: collection_array %>
     <%= f.input :location %>
     <%= f.input :description, as: :text %>
     <%= f.input :photo, as: :file %>
@@ -13,3 +26,4 @@
     </div>
   <% end %>
 </div>
+<%= javascript_pack_tag 'dynamic_offers', defer: true %>

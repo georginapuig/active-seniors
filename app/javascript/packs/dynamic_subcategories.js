@@ -10,18 +10,26 @@ for (var i=1; i<select_subcateg.length; i++) {
   arrayoptions.push(newoption);
 }
 select_categ.onchange = function() {
-  console.log(arrayoptions);
+  //console.log(arrayoptions);
   let value = select_categ.value;
   let num = select_subcateg.length;
-  for (var i=0; i<num; i++) {
-  	select_subcateg.options.remove(0);
-  }
+  for (var i=0; i<(num - 1); i++) {
+    let len = select_subcateg.length - 1;
+  	select_subcateg.options.remove(len);
+  };
   arrayoptions.forEach((option) => {
-  	if (option["parent_id"] === value) {
-  	  var new_option = document.createElement("option");
-	  new_option.text = option["innerText"];
-	  new_option.value = option["value"];
-	  select_subcateg.options.add(new_option);
-  	};
+    if (value != "") {
+  	  if (option["parent_id"] === value) {
+  	    var new_option = document.createElement("option");
+	      new_option.text = option["innerText"];
+	      new_option.value = option["value"];
+	      select_subcateg.options.add(new_option);
+  	  };
+    } else {
+        var new_option = document.createElement("option");
+        new_option.text = option["innerText"];
+        new_option.value = option["value"];
+        select_subcateg.options.add(new_option);
+    }
   });
 };
