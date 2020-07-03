@@ -68,6 +68,7 @@ class OffersController < ApplicationController
       }
       end
     end
+    @offers.unshift(Offer.last)
   end
 
   def show

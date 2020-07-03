@@ -17,7 +17,7 @@ class CheckoutsController < ApplicationController
         currency: 'usd',
         quantity: 1
       }],
-      success_url: booking_url(@booking), # payments_success_url
+      success_url: "http://www.active-seniors.club/bookings/#{@booking.id}",
       cancel_url:  payments_cancel_url
     )
 
