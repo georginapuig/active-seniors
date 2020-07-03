@@ -11,9 +11,9 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Welcome to Active Seniors"
   end
 
-  def booking_confirmation(booking)
-    @booking = booking
+  # def booking_confirmation(booking)
+  #   @booking = booking
 
-    mail to: @booking.user.email, subject: "Booking confirmation"
-  end
+  #   mail to: @booking.user.email, subject: "Booking confirmation"
+  # end
 end
