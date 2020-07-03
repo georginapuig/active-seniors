@@ -4,7 +4,7 @@
   <div class="d-flex  card-senior p-5">
     <!-- left -->
     <div class="left">
-      <%=  cl_image_tag @offer.user.photo.key, width: 700, height: 700, crop: :fill %>
+      <%=  cl_image_tag @offer.user.photo.key, :width => 700, :height => 700, :crop => :fill %>
       <div class="card-bottom-left">
         <!-- name -->
         <p id="full-name"><%= @offer.user.first_name %> <%= @offer.user.last_name %>, <%= @offer.user.age %></p>
