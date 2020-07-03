@@ -1,15 +1,30 @@
-<h1>Booking</h1>
+<div class="d-flex justify-content-center pt-5">
+  <!-- booking confirmed -->
+  <div class="booking-confirmed mr-5">
+    <!-- <h2 id="booking-confirmed-h2">Booking confirmed</h2> -->
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <h3 
+      style="font-weight: 500; font-size: 22px;" 
+      id="user-h3"
+      class="text-center">
+        <%= @booking.user.first_name %>, your booking is confirmed
+    </h3>
 
-<h1><%= @booking.user.first_name %></h1>
+    
+  </div>
 
-<!-- messages display -->
-<div id="messages" data-booking-id="<%= @booking.id %>">
-  <% @booking.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>  
-  <% end %>
+  <!-- message -->
+  <div class="messages">
+    <!-- messages display -->
+    <div id="messages" data-booking-id="<%= @booking.id %>">
+      <% @booking.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>  
+      <% end %>
+    </div>
+
+    <!-- input message -->
+    <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false %>
+    <% end %>
+  </div>
 </div>
-
-<!-- input message -->
-<%= simple_form_for [ @booking, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false %>
-<% end %>
