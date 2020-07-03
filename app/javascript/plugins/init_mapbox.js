@@ -4,7 +4,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 10000 });
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 5000 });
 };
 
 const initMapbox = () => {

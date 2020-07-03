@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      UserMailer.booking_confirmation(@booking).deliver_now
+      # UserMailer.booking_confirmation(@booking).deliver_now
       redirect_to new_booking_checkout_path(@booking)
     else
       render 'offers/show'

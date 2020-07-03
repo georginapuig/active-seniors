@@ -1,4 +1,4 @@
 <h2><strong><%= offer.subcategory.name %></strong></h2>
 <h4><%= offer.user.first_name %>  <%= offer.user.last_name %></h4>
-<img src=<%= offer.user.photo %> width=200 />
+<%=  cl_image_tag offer.user.photo.key, :width => 200, :crop => :fill %>
 <h5><%= offer.location %></h5>
