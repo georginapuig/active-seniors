@@ -1,0 +1,29 @@
+// big card
+#card-booking {
+  width: 950px;
+  margin: 80px auto;
+  padding: 70px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#card-bookings-offer {
+  height: 277px;
+  margin-bottom: 0px;
+  box-shadow: none;
+  border: 1px solid rgba(201, 201, 201, 0.5);
+  border-radius: 6px;
+}
+
+// small offer card
+#card-bottom-left-offer p:first-child {
+  font-size: 19px;
+  padding-bottom: 5px;
+}
+
+#top-card-offer img {
+  width: 130px;
+  height: 130px;
+  border-radius: 0;
+}
