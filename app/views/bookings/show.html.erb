@@ -51,24 +51,28 @@
     </div>
 
     <!-- messages display -->
-    <!-- <div class="pl-4 pr-4" id="messages" data-booking-id="<%= @booking.id %>"> -->
-      <!-- <div class="messages-display"> -->
+    <div class="pl-4 pr-4" id="messages" data-booking-id="<%= @booking.id %>">
+      <div class="messages-display">
+        <div class="text-center">
+          <i class="fa fa-comments" aria-hidden="true"></i>
+        </div>
         <!-- <% @booking.messages.each do |message| %> -->
-        <!-- <div class="d-flex pb-2"> -->
-          <!-- <div class="pr-3"> -->
-            <!-- <%=  cl_image_tag message.user.photo.key, :width => 148, :height => 148, :crop => :fill %> -->
-          <!-- </div> -->
-          <!-- <%= render 'messages/message', message: message %>   -->
-        <!-- </div> -->
-      <!-- <% end %> -->
-      <!-- </div> -->
+          <div class="d-flex pb-2">
+            <div class="pr-3">
+              <!-- <%=  cl_image_tag message.user.photo.key, :width => 148, :height => 148, :crop => :fill %> -->
+            </div>
+            <!-- <%= render 'messages/message', message: message %>   -->
+            
+
+        <!-- <% end %> -->
+      </div>
      
       <!-- input message -->
       <div class="input-message">
-        <!-- <%= simple_form_for [ @booking, @message ], remote: true do |f| %> -->
-          <!-- <%= f.input :content, label: false, class: "input-message" %> -->
-        <!-- <% end %> -->
-        <input type="text" class="input-message">
+        <!-- <%= simple_form_for [ @booking, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, class: "input-message" %>
+        <% end %> -->
+        <input style="height: 50px;" type="text" class="input-message" placeholder="Enter your message here">
       </div>
     </div>
   </div>
