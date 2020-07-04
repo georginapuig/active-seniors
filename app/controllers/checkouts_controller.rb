@@ -17,7 +17,7 @@ class CheckoutsController < ApplicationController
         currency: 'usd',
         quantity: 1
       }],
-      success_url: booking_url(@booking), # "https://www.active-seniors.club/bookings/#{@booking.id}"
+      success_url: booking_url(@booking, host: "https://active-seniors.herokuapp.com"),# "https://www.active-seniors.club/bookings/#{@booking.id}"
       cancel_url:  payments_cancel_url
     )
 
