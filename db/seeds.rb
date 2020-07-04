@@ -33,7 +33,7 @@ female_pics = [
 ]
 
 men_pics = [
-  'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593004136/Seniors/m1.jpg',
+  # 'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593004136/Seniors/m1.jpg',
   'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003795/Seniors/m2.jpg',
   'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003438/Seniors/m3.jpg',
   'https://res.cloudinary.com/dbjx0xfid/image/upload/v1593003434/Seniors/m4.jpg',
