@@ -60,6 +60,15 @@
   height: 370px;
 }
 
+.messages-display::-webkit-scrollbar {
+  display: none;
+}
+
+.messages-display {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .booking-info {
   margin: 32px 55px;
   color: rgb(80, 80, 80);
@@ -67,4 +76,10 @@
 
 strong {
   font-weight: 500;
+}
+
+.fa-comments {
+  font-size: 130px;
+  margin: 120px;
+  color: rgba(201, 201, 201, 0.3);
 }
