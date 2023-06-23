@@ -26,11 +26,18 @@
 
 ### First download instructions :fire:
 ```
-Run bundle install
-Run yarn install
-Run rails db:create
-Run rails db:migrate
+bundle install
 ```
+```
+yarn install
+```
+```
+rails db:create
+```
+```
+rails db:migrate
+```
+
 ---
 
 Trello: https://bit.ly/3fKB62E
